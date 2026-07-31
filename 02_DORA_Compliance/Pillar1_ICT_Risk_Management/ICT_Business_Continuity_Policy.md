@@ -26,3 +26,75 @@ definierten Testing- und Übungszyklus.
   eng verzahnt mit ISO/IEC 27001
 - **BSI-Standard 200-4** – deutsche BCM-Methodik, eng an ISO 22301 
   angelehnt, mit ergänzenden nationalen Prüfungsanforderungen
+
+## 2. BCM-Governance und Rollen
+
+Dieser Abschnitt beschreibt die Governance-Struktur des BCM-Departments. 
+Da Business Continuity Management breiter gefasst ist als reine 
+Informationssicherheit – es umfasst neben ICT auch Personal, Gebäude 
+und Lieferketten – wird BCM als eigenständiges Department geführt, 
+getrennt vom ISMS-Team. Beide Bereiche arbeiten eng zusammen, 
+insbesondere bei ICT-bezogenen Krisenereignissen.
+
+Die Leitung des Departments obliegt dem Crisis Manager, der direkt an 
+den Chief Risk Officer (CRO) berichtet. Der Crisis Manager leitet 
+zugleich das IT Service Continuity Management (ITSCM)-Team, das für 
+die technische Wiederherstellung von IT-Services im Krisenfall 
+verantwortlich ist.
+
+Im Ereignisfall tritt der Krisenstab zusammen – ein temporäres, 
+funktionsübergreifendes Entscheidungsgremium, das ausschließlich im 
+Krisenfall aktiviert wird und im Normalbetrieb nicht besteht. Der 
+Krisenstab setzt sich zusammen aus je einem Vertreter bzw. einer 
+Vertreterin des Vorstands, der Unternehmenskommunikation (PR), der 
+IT-Abteilung sowie des internen Audit-Teams.
+
+## 3. Business Impact Analysis (BIA) — Methodik und Ergebnisse
+
+### 3.1 Methodik
+
+Die Business Impact Analysis wird gemäß DORA Art. 11 Abs. 5, ISO/IEC 
+22301:2019 Kapitel 8.2.2 und BSI-Standard 200-4 durchgeführt und folgt 
+einem sechsstufigen Vorgehen: (1) Identifikation der Geschäftsprozesse, 
+(2) Definition von Auswirkungskategorien, (3) Bewertung der Auswirkung 
+über mehrere Zeithorizonte, (4) Ableitung von RTO/RPO aus dem Maximum 
+Tolerable Period of Disruption (MTPD), (5) Abhängigkeitsanalyse 
+kritischer Ressourcen, (6) Konsolidierung zu Kritikalitätsstufen.
+
+Auswirkungen werden auf einer Skala von 1 (vernachlässigbar) bis 5 
+(kritisch/existenzbedrohend) über vier Zeithorizonte (1h, 4h, 24h, 
+3 Tage) und fünf Kategorien bewertet: Finanzieller Schaden, 
+Regulatorische/rechtliche Konsequenzen, Reputation, Kundenauswirkung, 
+Schaden an Leib und Leben. Die Gesamteinstufung eines Zeitpunkts folgt 
+dem Worst-Case-Prinzip: Der höchste Einzelwert über alle Kategorien 
+bestimmt die Gesamtkritikalität.
+
+Aus Kapazitätsgründen wird die vollständige BIA-Tiefenanalyse zunächst 
+auf drei repräsentative Kernprozesse fokussiert. Die übrigen 
+Kernprozesse werden grob eingestuft und im Rahmen des nächsten 
+BIA-Reviewzyklus (siehe Abschnitt 8) vollständig nachbewertet.
+
+### 3.2 Tiefenanalyse — Kernprozesse
+
+| Prozess | RTO | RPO | Kritikalitätsverlauf (1h/4h/24h/3T) |
+|---|---|---|---|
+| Verwahrung digitaler Vermögenswerte | 2h | 2min | 4/4/5/5 |
+| Transaktionsausführung | 1h | 30sek | 4/4/5/5 |
+| Regulatorisches Meldewesen | 45min | 30min | 4/5/5/5 |
+
+Bemerkenswert: Regulatorisches Meldewesen erreicht als einziger 
+Prozess bereits nach 4 Stunden die maximale Kritikalitätsstufe — 
+begründet durch den Meta-Risiko-Charakter des Prozesses (eine 
+verpasste Meldefrist nach DORA Art. 19 verschärft jeden zugrunde-
+liegenden Incident zusätzlich um einen eigenständigen Compliance-
+Verstoß) sowie die hohe Geschwindigkeit reputationsschädigender 
+Verbreitung in der Kryptobranche.
+
+### 3.3 Grobeinstufung — weitere Kernprozesse
+
+| Prozess | Grobe Kritikalität | Begründung |
+|---|---|---|
+| Interne IT-Sicherheit & Zugriffssteuerung | Kritisch | Unterstützt sämtliche anderen Prozesse; Ausfall führt zu vollständigem Zugriffsverlust unternehmensweit |
+| Kundenzugriff/-Reporting | Hoch | Hohes Eskalationspotenzial für Vertrauensverlust und Bank-Run-Szenarien, ohne direkten Vermögensverlust |
+| Zahlungsverkehr/Fiat-Anbindung | Hoch | Direkter Geschäftsstillstand für Ein-/Auszahlungen, jedoch kein irreversibler Vermögensverlust |
+| Kunden-Onboarding & Identifikation | Mittel | Betrifft primär Neugeschäft; bestehende Kundenbeziehungen und -vermögen nicht unmittelbar gefährdet |
