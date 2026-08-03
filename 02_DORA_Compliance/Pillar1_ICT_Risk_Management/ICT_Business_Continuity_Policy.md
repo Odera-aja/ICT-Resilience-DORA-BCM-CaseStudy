@@ -129,3 +129,52 @@ Systeme mit Abhängigkeit zum Regulatorischen Meldewesen erben dessen
 strengeren RTO von 45 Minuten, auch wenn sie zusätzlich weniger 
 zeitkritische Prozesse bedienen — dies spiegelt den in Abschnitt 3.2 
 beschriebenen Meta-Risiko-Charakter des Meldewesens wider.
+
+## 4. Minimum Viable Company (MVC) — Definition
+
+Die Minimum Viable Company beschreibt die minimale Kombination aus 
+Systemen, Personal und Drittparteien-Anbindungen, die auch im 
+schwersten Krisenfall aufrechterhalten werden muss, um finanzielle 
+Insolvenz, regulatorische Verstöße und irreversible Schäden für 
+Kunden abzuwenden. Die MVC-Definition basiert unmittelbar auf den 
+Ergebnissen der Business Impact Analysis (Abschnitt 3) und deren 
+Abhängigkeitsanalyse.
+
+### 4.1 Kritische Systeme
+
+Folgende Systeme sind gemäß Abhängigkeitsanalyse (Abschnitt 3.4) 
+Bestandteil der MVC und müssen gemäß ihrem jeweiligen RTO 
+wiederhergestellt werden:
+
+- Hardware Security Module (HSM)
+- Active Directory (interne Mitarbeiteridentitäten)
+- IAM (interne Rechtevergabe)
+- CIAM (Kundenauthentifizierung)
+- Secure Gateways
+- Custody-Ledger-Datenbank
+- Meldewesen-Dokumentations-Datenbank
+
+### 4.2 Mindestpersonalbesetzung
+
+Um den Betrieb der MVC-Systeme im Krisenfall sicherzustellen, gelten 
+folgende Mindestbesetzungen mit definierter Vertretungsfähigkeit 
+(Bus-Factor-Prinzip):
+
+| Bereich | Mindestbesetzung | Anmerkung |
+|---|---|---|
+| ITSCM-Team | 2 Personen | Mindestens zwei Personen müssen jede kritische Wiederherstellungsaufgabe eigenständig ausführen können |
+| IT-Ops-Bereiche (Betrieb, Firewall, Virtualisierung, Backup) | 2 Personen je Bereich | Sicherstellung technischer Grundfunktionen |
+| Krisenstab | Alle 4 definierten Rollen (Vorstand, PR, IT, Audit) | Funktionsübergreifende Entscheidungsfähigkeit erfordert vollständige Besetzung gemäß Abschnitt 2 |
+
+### 4.3 Kritische Drittparteien
+
+Die MVC ist zusätzlich von der Verfügbarkeit folgender kritischer 
+Drittanbieter abhängig (Detailerfassung im Third-Party-Register unter 
+DORA Pillar 4):
+
+- HSM-Hersteller (Wartung/Support)
+- Blockchain-Node-Infrastruktur-Anbieter
+
+Diese Abhängigkeiten werden im Rahmen des Third-Party-Risikomanagements 
+gesondert bewertet und sind nicht Gegenstand der internen 
+BIA-Zeithorizont-Analyse.
