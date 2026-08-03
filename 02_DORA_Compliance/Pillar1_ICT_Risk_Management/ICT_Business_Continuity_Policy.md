@@ -98,3 +98,34 @@ Verbreitung in der Kryptobranche.
 | Kundenzugriff/-Reporting | Hoch | Hohes Eskalationspotenzial für Vertrauensverlust und Bank-Run-Szenarien, ohne direkten Vermögensverlust |
 | Zahlungsverkehr/Fiat-Anbindung | Hoch | Direkter Geschäftsstillstand für Ein-/Auszahlungen, jedoch kein irreversibler Vermögensverlust |
 | Kunden-Onboarding & Identifikation | Mittel | Betrifft primär Neugeschäft; bestehende Kundenbeziehungen und -vermögen nicht unmittelbar gefährdet |
+
+### 3.4 Abhängigkeitsanalyse und abgeleitete System-RTOs
+
+Aufbauend auf der Prozess-BIA wird für jedes unterstützende System 
+ermittelt, von welchen Kernprozessen es abhängt. Der RTO eines Systems 
+entspricht dabei stets dem strengsten (kürzesten) RTO aller abhängigen 
+Prozesse, da ein System erst dann als wiederhergestellt gelten kann, 
+wenn es alle seine Abhängigkeiten bedienen kann.
+
+Ein zentraler Architekturgrundsatz liegt dieser Analyse zugrunde: 
+interne Mitarbeiteridentitäten (verwaltet über Active Directory und 
+IAM) und externe Kundenidentitäten (verwaltet über ein separates 
+Customer Identity and Access Management, CIAM) werden strikt getrennt 
+geführt. Diese Trennung verhindert, dass eine Kompromittierung der 
+öffentlich erreichbaren Kundenlogin-Fläche einen Pfad zu internen 
+Mitarbeiterkonten eröffnen könnte.
+
+| System | Abhängige Kernprozesse | Abgeleiteter RTO |
+|---|---|---|
+| Hardware Security Module (HSM) | Verwahrung digitaler Vermögenswerte, Transaktionsausführung | 1h |
+| Active Directory (interne Mitarbeiteridentitäten) | Verwahrung, Transaktionsausführung, Regulatorisches Meldewesen | 45min |
+| IAM (interne Rechtevergabe) | Verwahrung, Transaktionsausführung, Regulatorisches Meldewesen | 45min |
+| CIAM (Kundenauthentifizierung) | Verwahrung, Transaktionsausführung | 1h |
+| Secure Gateways | Verwahrung, Transaktionsausführung, Regulatorisches Meldewesen | 45min |
+| Custody-Ledger-Datenbank | Verwahrung, Transaktionsausführung | 1h |
+| Meldewesen-Dokumentations-Datenbank | Regulatorisches Meldewesen | 45min |
+
+Systeme mit Abhängigkeit zum Regulatorischen Meldewesen erben dessen 
+strengeren RTO von 45 Minuten, auch wenn sie zusätzlich weniger 
+zeitkritische Prozesse bedienen — dies spiegelt den in Abschnitt 3.2 
+beschriebenen Meta-Risiko-Charakter des Meldewesens wider.
