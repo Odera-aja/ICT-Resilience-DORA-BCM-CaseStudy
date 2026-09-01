@@ -1,1 +1,128 @@
-# DORA-ISO27001-CryptoCustodian-ISMS
+# ICT Resilience & ISMS: GermanCrypto Custody AG
+
+**Eine durchgängig ausgearbeitete Fallstudie zu DORA, ISO/IEC 27001 und Business Continuity Management am Beispiel eines BaFin-regulierten Krypto-Verwahrers.**
+
+> ⚠️ Die **GermanCrypto Custody AG ist ein fiktives Unternehmen.** Sämtliche Zahlen, Systeme, Prozesse und Organisationsstrukturen sind erfunden. Dieses Repository ist ein persönliches Fach- und Lernprojekt und bildet keine reale Organisation ab.
+
+---
+
+## Worum es geht
+
+Regulatorische Dokumentation wird selten am Stück gezeigt. Man findet Vorlagen, Checklisten und Normtexte, aber selten eine durchgehende Kette von der Organisationsbeschreibung über die Business Impact Analysis bis zu der Frage, welche Systeme ein Unternehmen im schwersten Krisenfall tatsächlich am Leben halten muss.
+
+Genau diese Kette wird hier gebaut: für ein fiktives, aber realistisch modelliertes Finanzinstitut, das gleichzeitig unter KWG, MiCA und DORA fällt. Jedes Dokument baut nachvollziehbar auf dem vorherigen auf. Kein Ergebnis wird behauptet; jeder RTO, jede Kritikalitätsstufe und jedes MVC-System ist aus der vorangegangenen Analyse abgeleitet.
+
+Der Schwerpunkt liegt auf der **Minimum Viable Company (MVC)**: der minimalen Kombination aus Systemen, Personal und Drittparteien, die auch im schwersten Krisenfall aufrechterhalten werden muss.
+
+---
+
+## Das Fallunternehmen
+
+| | |
+|---|---|
+| **Unternehmen** | GermanCrypto Custody AG (fiktiv) |
+| **Geschäftsmodell** | Verwahrung digitaler Vermögenswerte für Privat- und institutionelle Kunden |
+| **Sitz** | Frankfurt am Main, europaweit tätig |
+| **Größe** | ca. 2.500 Mitarbeitende, ca. 15 Mrd. EUR Assets under Custody |
+| **Regulatorischer Status** | Erlaubnis zum Kryptoverwahrgeschäft nach § 1 Abs. 1a Nr. 6 KWG (BaFin), CASP-Zulassung nach MiCA, DORA-pflichtig |
+| **Infrastruktur** | Zwei Rechenzentren im Active-Passive-Betrieb (Frankfurt / Leverkusen), konsequent on-premise, HSM an beiden Standorten |
+
+Das Szenario ist bewusst so gewählt, dass sich Resilienzfragen zuspitzen: Bei einem Krypto-Verwahrer bedeutet der Verlust kryptographischer Schlüssel **irreversiblen** Vermögensverlust. Es gibt keine Rückbuchung und keine zentrale Instanz, die einen Fehler korrigiert.
+
+---
+
+## Regulatorischer und methodischer Rahmen
+
+| Rahmenwerk | Rolle in diesem Projekt |
+|---|---|
+| **Verordnung (EU) 2022/2554 (DORA)** | Führender Rahmen. Art. 11 für die ICT Business Continuity Policy, Art. 19 für Meldepflichten, Art. 4 für den Verhältnismäßigkeitsgrundsatz |
+| **ISO/IEC 27001:2022** | ISMS-Struktur, insbesondere Kap. 4.3 (Geltungsbereich) und Kap. 5.3 (Rollen und Verantwortlichkeiten) |
+| **ISO/IEC 22301:2019** | BCM-Methodik, insbesondere Kap. 8.2.2 (Business Impact Analysis) |
+| **BSI-Standard 200-4** | Deutsche BCM-Methodik als ergänzende nationale Referenz |
+| **KWG / MiCA** | Bestimmen den aufsichtsrechtlichen Status des Fallunternehmens |
+
+---
+
+## Repository-Struktur
+
+```
+├── 00_Governance/                          ✅ fertig
+│   ├── 00_Organisationsprofil.md           Unternehmen, Infrastruktur, Stakeholder
+│   └── 01_ISMS_Scope_Statement.md          Geltungsbereich nach ISO/IEC 27001:2022, Kap. 4.3
+│
+├── 01_Risk_Management/                     🔜 geplant
+│   └──                                     Risikoanalyse, Statement of Applicability, Annex-A-Controls
+│
+└── 02_DORA_Compliance/                     🔄 in Arbeit
+    └── Pillar1_ICT_Risk_Management/
+        └── ICT_Business_Continuity_Policy.md
+```
+
+Die Nummerierung folgt der inhaltlichen Reihenfolge: zuerst die Governance-Grundlagen, darauf aufbauend der ISO-27001-Kern mit Risikobehandlung, darauf aufbauend die DORA-Säulen.
+
+---
+
+## Aktueller Stand
+
+| Baustein | Stand |
+|---|---|
+| Organisationsprofil | ✅ fertig |
+| ISMS Scope Statement (ISO 27001, Kap. 4.3) | ✅ fertig |
+| BCM-Governance und Rollen | ✅ fertig |
+| Business Impact Analysis, Methodik | ✅ fertig |
+| BIA, Tiefenanalyse Kernprozesse | ✅ fertig (3 Prozesse, übrige grob eingestuft) |
+| Abhängigkeitsanalyse und abgeleitete System-RTOs | ✅ fertig |
+| Minimum Viable Company, Definition | ✅ fertig |
+| Wiederanlaufstrategien | 🔄 in Arbeit |
+| Notfall- und Wiederanlaufpläne | 🔜 geplant |
+| Krisenkommunikation | 🔜 geplant |
+| Testing- und Übungszyklus | 🔜 geplant |
+| Review-Zyklus und kontinuierliche Verbesserung | 🔜 geplant |
+| Risikoanalyse und Statement of Applicability | 🔜 geplant |
+| Third-Party-Register (DORA Pillar 4) | 🔜 geplant |
+
+Das Projekt wird schrittweise weitergeführt. Der jeweils aktuelle Stand ist der veröffentlichte Stand; unfertige Kapitel werden nicht vorab hochgeladen.
+
+---
+
+## Ausgewählte inhaltliche Entscheidungen
+
+Einige Punkte, an denen dieses Projekt bewusst über das Ausfüllen einer Vorlage hinausgeht:
+
+**Das regulatorische Meldewesen als Meta-Risiko.** Es ist der einzige Kernprozess, der bereits nach vier Stunden die maximale Kritikalitätsstufe erreicht. Begründung: Eine verpasste Meldefrist nach DORA Art. 19 verschärft jeden zugrundeliegenden Incident um einen eigenständigen Compliance-Verstoß. Der daraus abgeleitete RTO von 45 Minuten wird konsequent auf alle abhängigen Systeme vererbt.
+
+**Strikte Trennung interner und externer Identitäten.** Mitarbeiteridentitäten (Active Directory, IAM) und Kundenidentitäten (CIAM) werden getrennt geführt, damit eine Kompromittierung der öffentlich erreichbaren Kundenlogin-Fläche keinen Pfad zu internen Konten eröffnet.
+
+**Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der ISMS-Geltungsbereich schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen stehen daher nicht im Widerspruch, sondern greifen ineinander. Das ist im Scope Statement explizit ausgeführt.
+
+**Offengelegte Analysetiefe.** Die BIA-Tiefenanalyse umfasst drei repräsentative Kernprozesse; die übrigen sind grob eingestuft und für den nächsten Reviewzyklus vorgemerkt. Diese Begrenzung wird im Dokument benannt statt kaschiert.
+
+---
+
+## Methodik und Quellen
+
+Die Dokumente stützen sich auf unterschiedliche Quellenarten, und diese Unterscheidung ist bewusst:
+
+**Normativ abgesichert** sind Aufbau des ISMS, Scoping, BIA-Methodik und die Ableitung von RTO/RPO aus dem Maximum Tolerable Period of Disruption. Grundlage sind ISO/IEC 27001:2022, ISO/IEC 22301:2019, BSI-Standard 200-4 und der Verordnungstext von DORA.
+
+**Nicht normativ abgesichert** ist der Kern des MVC-Konzepts. Weder ISO/IEC 22301 noch DORA definieren eine "Minimum Viable Company" als eigenständige Methodik. Das Thema wird derzeit überwiegend **herstellerseitig** vorangetrieben, insbesondere von den Anbietern, die im **Gartner Magic Quadrant für Backup and Data Protection Platforms** als Leaders geführt werden (unter anderem Veeam, Rubrik, Commvault und Cohesity). Deren Fachbeiträge, Referenzmodelle und Recovery-Konzepte bilden derzeit die belastbarste verfügbare Quellenlage zu MVC.
+
+Für die MVC-Definition in diesem Projekt wurde daher bewusst auf dieses Herstellermaterial zurückgegriffen und mit der normativ abgesicherten BIA verknüpft. Wo Aussagen aus Herstellerquellen stammen, ist das kenntlich gemacht. Deren Perspektive ist fachlich fundiert, aber nicht neutral.
+
+> 📌 **Hinweis zum Stand der Quellenarbeit:** Die konkreten Einzelnachweise zu den herangezogenen Herstellerquellen werden ergänzt, sobald die Recherche abgeschlossen ist.
+
+---
+
+## Warum dieses Projekt
+
+Ich arbeite seit mehreren Jahren im Cybersecurity- und GRC-Umfeld eines DAX-Konzerns, unter anderem in der Koordination von Disaster-Recovery-Tests über mehrere europäische Märkte. Vieles davon ist operative Arbeit an bestehenden Prozessen. Dieses Repository ist der Versuch, denselben Themenkomplex einmal **von Grund auf und durchgehend** selbst aufzubauen: von der Organisationsbeschreibung bis zur Frage, was ein Unternehmen im schwersten Fall am Leben hält.
+
+Rückmeldungen, Kritik und Hinweise auf methodische Schwächen sind ausdrücklich willkommen.
+
+---
+
+## Autor
+
+**Odera Anthony Anene**, Cybersecurity & GRC Consultant
+CompTIA Security+ (SY0-701) · SC-900 · AZ-900 · Infosys Certified GRC Associate
+[LinkedIn](https://www.linkedin.com/in/odera-anthony)
