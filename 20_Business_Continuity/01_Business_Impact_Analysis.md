@@ -73,15 +73,18 @@ Entscheidung und keine rein methodische.
 
 Aus diesem Vorgehen ergaben sich sieben Kernprozesse:
 
-| # | Kernprozess | Erbrachte Leistung | Erfülltes Kriterium |
+| # | Kernprozess | Prozessverantwortlicher Bereich | Erfülltes Kriterium |
 |---|---|---|---|
-| 1 | Verwahrung digitaler Vermögenswerte | Sichere Verwahrung privater kryptographischer Schlüssel | Kundenleistung |
-| 2 | Transaktionsausführung | Abwicklung von Transaktionen im Kundenauftrag | Kundenleistung |
-| 3 | Regulatorisches Meldewesen | Melde- und Berichtspflichten gegenüber BaFin und ESMA | Regulatorisch |
-| 4 | Interne IT-Sicherheit und Zugriffssteuerung | Authentifizierung und Autorisierung aller internen Zugriffe | Beide |
-| 5 | Kundenzugriff und Reporting | Einsicht der Kunden in Bestände und Transaktionshistorie | Kundenleistung |
-| 6 | Zahlungsverkehr und Fiat-Anbindung | Ein- und Auszahlungen in Fiat-Währung | Kundenleistung |
-| 7 | Kunden-Onboarding und Identifikation | Aufnahme neuer Kunden inklusive Identitätsprüfung | Regulatorisch |
+| 1 | Verwahrung digitaler Vermögenswerte | Custody Operations | Kundenleistung |
+| 2 | Transaktionsausführung | Transaction Services | Kundenleistung |
+| 3 | Regulatorisches Meldewesen | Compliance-Abteilung | Regulatorisch |
+| 4 | Interne IT-Sicherheit und Zugriffssteuerung | ISMS-Team mit IT-Betrieb | Beide |
+| 5 | Kundenzugriff und Reporting | Client Services | Kundenleistung |
+| 6 | Zahlungsverkehr und Fiat-Anbindung | Treasury & Payments | Kundenleistung |
+| 7 | Kunden-Onboarding und Identifikation | Compliance-Abteilung | Regulatorisch |
+
+Die Bereichsstruktur und die vollständige Zuordnung sind im Organisationsprofil
+(`00_Governance/00_Organisationsprofil.md`, Abschnitt 5.5) dokumentiert.
 
 ### 1.3 Auswahl der Prozesse für die Tiefenanalyse
 
