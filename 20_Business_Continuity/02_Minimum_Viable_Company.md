@@ -14,7 +14,7 @@ Abhängigkeitsanalyse.
 
 ## 1. Kritische Systeme
 
-Folgende Systeme sind gemäß Abhängigkeitsanalyse (`01_Business_Impact_Analysis.md`, Abschnitt 4) 
+Folgende Systeme sind gemäß Abhängigkeitsanalyse (`01_Business_Impact_Analysis.md`, Abschnitt 5) 
 Bestandteil der MVC und müssen gemäß ihrem jeweiligen RTO 
 wiederhergestellt werden:
 
