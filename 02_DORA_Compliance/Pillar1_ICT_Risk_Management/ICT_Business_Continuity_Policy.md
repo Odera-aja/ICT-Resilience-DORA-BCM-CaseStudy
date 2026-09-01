@@ -1,3 +1,5 @@
+# ICT Business Continuity Policy – GermanCrypto Custody AG
+
 ## 1. Zweck und regulatorischer Rahmen
 
 Diese Policy legt das Rahmenwerk fest, mit dem die GermanCrypto Custody AG 
