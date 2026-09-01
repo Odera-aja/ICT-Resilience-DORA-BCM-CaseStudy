@@ -85,7 +85,7 @@ BIA-Reviewzyklus (siehe Abschnitt 8) vollständig nachbewertet.
 | Regulatorisches Meldewesen | 45min | 30min | 4/5/5/5 |
 
 Bemerkenswert: Regulatorisches Meldewesen erreicht als einziger 
-Prozess bereits nach 4 Stunden die maximale Kritikalitätsstufe — 
+Prozess bereits nach 4 Stunden die maximale Kritikalitätsstufe erreicht,
 begründet durch den Meta-Risiko-Charakter des Prozesses (eine 
 verpasste Meldefrist nach DORA Art. 19 verschärft jeden zugrunde-
 liegenden Incident zusätzlich um einen eigenständigen Compliance-
@@ -129,7 +129,7 @@ Mitarbeiterkonten eröffnen könnte.
 
 Systeme mit Abhängigkeit zum Regulatorischen Meldewesen erben dessen 
 strengeren RTO von 45 Minuten, auch wenn sie zusätzlich weniger 
-zeitkritische Prozesse bedienen — dies spiegelt den in Abschnitt 3.2 
+zeitkritische Prozesse bedienen. Dies spiegelt den in Abschnitt 3.2 
 beschriebenen Meta-Risiko-Charakter des Meldewesens wider.
 
 ## 4. Minimum Viable Company (MVC): Definition
