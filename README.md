@@ -1,6 +1,6 @@
-# ICT Resilience & ISMS: GermanCrypto Custody AG
+# ICT Resilience Framework: GermanCrypto Custody AG
 
-**Eine durchgängig ausgearbeitete Fallstudie zu DORA, ISO/IEC 27001 und Business Continuity Management am Beispiel eines BaFin-regulierten Krypto-Verwahrers.**
+**Eine durchgängig ausgearbeitete Fallstudie zu digitaler operationaler Resilienz in einem BaFin-regulierten Finanzinstitut. Schwerpunkt: Business Continuity Management und die Minimum Viable Company.**
 
 > ⚠️ Die **GermanCrypto Custody AG ist ein fiktives Unternehmen.** Sämtliche Zahlen, Systeme, Prozesse und Organisationsstrukturen sind erfunden. Dieses Repository ist ein persönliches Fach- und Lernprojekt und bildet keine reale Organisation ab.
 
@@ -31,71 +31,63 @@ Das Szenario ist bewusst so gewählt, dass sich Resilienzfragen zuspitzen: Bei e
 
 ---
 
+## Aufbau des Repositorys
+
+Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IEC 27001 und ISO/IEC 22301 überlappen sich inhaltlich stark. Ein Dokument erfüllt meist gleichzeitig Anforderungen aus mehreren Quellen, eine Ablage nach Regelwerk würde dieselben Inhalte doppelt führen. Die regulatorische Nachvollziehbarkeit übernimmt deshalb das Compliance-Mapping.
+
+```
+00_Governance/                              Kontext, Geltungsbereiche, Rollen
+    00_Organisationsprofil.md               ✅ Unternehmen, Infrastruktur, Stakeholder
+    01_BCMS_Scope_Statement.md              🔜 Geltungsbereich BCMS, ISO 22301 Kap. 4.3
+    02_ISMS_Scope_Statement.md              ✅ Geltungsbereich ISMS, ISO 27001 Kap. 4.3
+
+10_Risikomanagement/                        🔜 Risikoanalyse, Statement of Applicability, Annex-A-Controls
+
+20_Business_Continuity/                     Schwerpunkt dieses Projekts
+    00_ICT_Business_Continuity_Policy.md    ✅ Rahmenwerk, Governance, Rollen
+    01_Business_Impact_Analysis.md          ✅ Methodik, Kritikalität, System-RTOs
+    02_Minimum_Viable_Company.md            ✅ Kritische Systeme, Personal, Drittparteien
+    03_Wiederanlaufstrategien.md            🔜
+    04_Testing_und_Uebungszyklus.md         🔜
+    05_Notfall_und_Krisenkommunikation.md   🔜
+
+30_Third_Party_Risk/                        🔜 DORA Art. 28 bis 30
+40_Incident_Management/                     🔜 DORA Art. 17 bis 23
+50_Resilience_Testing/                      🔜 DORA Art. 24 bis 27
+
+90_Compliance_Mapping/
+    DORA_ISO_Mapping.md                     ✅ Welches Dokument erfüllt welche Anforderung
+```
+
+Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der jeweils aktuelle Stand ist der veröffentlichte Stand; unfertige Kapitel werden nicht vorab hochgeladen.
+
+---
+
 ## Regulatorischer und methodischer Rahmen
 
 | Rahmenwerk | Rolle in diesem Projekt |
 |---|---|
-| **Verordnung (EU) 2022/2554 (DORA)** | Führender Rahmen. Art. 11 für die ICT Business Continuity Policy, Art. 19 für Meldepflichten, Art. 4 für den Verhältnismäßigkeitsgrundsatz |
-| **ISO/IEC 27001:2022** | ISMS-Struktur, insbesondere Kap. 4.3 (Geltungsbereich) und Kap. 5.3 (Rollen und Verantwortlichkeiten) |
-| **ISO/IEC 22301:2019** | BCM-Methodik, insbesondere Kap. 8.2.2 (Business Impact Analysis) |
+| **Verordnung (EU) 2022/2554 (DORA)** | Regulatorischer Auftrag. Art. 11 für Business Continuity, Art. 12 für Backup und Wiederherstellung, Art. 19 für Meldepflichten, Art. 4 für den Verhältnismäßigkeitsgrundsatz |
+| **ISO/IEC 27001:2022** | Managementsystem-Struktur. Kap. 4.3 (Geltungsbereich), Kap. 5.3 (Rollen), Anhang A als Kontrollrahmen |
+| **ISO/IEC 22301:2019** | BCM-Methodik. Kap. 4.3 (Geltungsbereich BCMS), Kap. 8.2.2 (Business Impact Analysis), Kap. 8.3 (Strategien) |
 | **BSI-Standard 200-4** | Deutsche BCM-Methodik als ergänzende nationale Referenz |
 | **KWG / MiCA** | Bestimmen den aufsichtsrechtlichen Status des Fallunternehmens |
 
----
-
-## Repository-Struktur
-
-```
-├── 00_Governance/                          ✅ fertig
-│   ├── 00_Organisationsprofil.md           Unternehmen, Infrastruktur, Stakeholder
-│   └── 01_ISMS_Scope_Statement.md          Geltungsbereich nach ISO/IEC 27001:2022, Kap. 4.3
-│
-├── 01_Risk_Management/                     🔜 geplant
-│                                            Risikoanalyse, Statement of Applicability, Annex-A-Controls
-│
-└── 02_DORA_Compliance/                     🔄 in Arbeit
-    └── Pillar1_ICT_Risk_Management/
-        └── ICT_Business_Continuity_Policy.md
-```
-
-Die Nummerierung folgt der inhaltlichen Reihenfolge: zuerst die Governance-Grundlagen, darauf aufbauend der ISO-27001-Kern mit Risikobehandlung, darauf aufbauend die DORA-Säulen.
-
----
-
-## Aktueller Stand
-
-| Baustein | Stand |
-|---|---|
-| Organisationsprofil | ✅ fertig |
-| ISMS Scope Statement (ISO 27001, Kap. 4.3) | ✅ fertig |
-| BCM-Governance und Rollen | ✅ fertig |
-| Business Impact Analysis, Methodik | ✅ fertig |
-| BIA, Tiefenanalyse Kernprozesse | ✅ fertig (3 Prozesse, übrige grob eingestuft) |
-| Abhängigkeitsanalyse und abgeleitete System-RTOs | ✅ fertig |
-| Minimum Viable Company, Definition | ✅ fertig |
-| Wiederanlaufstrategien | 🔜 geplant |
-| Notfall- und Wiederanlaufpläne | 🔜 geplant |
-| Krisenkommunikation | 🔜 geplant |
-| Testing- und Übungszyklus | 🔜 geplant |
-| Review-Zyklus und kontinuierliche Verbesserung | 🔜 geplant |
-| Risikoanalyse und Statement of Applicability | 🔜 geplant |
-| Third-Party-Register (DORA Pillar 4) | 🔜 geplant |
-
-Das Projekt wird schrittweise weitergeführt. Der jeweils aktuelle Stand ist der veröffentlichte Stand; unfertige Kapitel werden nicht vorab hochgeladen.
+**Zum Verhältnis von ISO 27001 und DORA:** ISO/IEC 27001 ist ein freiwilliger, zertifizierbarer Managementsystem-Standard und liefert die Organisationsmaschinerie. DORA ist eine verpflichtende Verordnung und definiert die zu erreichenden Ergebnisse, ohne eine Organisationsform vorzugeben. Das ISMS ist damit das Vehikel, die DORA-Anforderungen sind das Ziel. Wie sich der bewusst eng gefasste ISO-Geltungsbereich zum weiten DORA-Anwendungsbereich verhält, ist im ISMS Scope Statement, Abschnitt 6, ausgeführt.
 
 ---
 
 ## Ausgewählte inhaltliche Entscheidungen
 
-Einige Punkte, an denen dieses Projekt bewusst über das Ausfüllen einer Vorlage hinausgeht:
-
 **Das regulatorische Meldewesen als Meta-Risiko.** Es ist der einzige Kernprozess, der bereits nach vier Stunden die maximale Kritikalitätsstufe erreicht. Begründung: Eine verpasste Meldefrist nach DORA Art. 19 verschärft jeden zugrundeliegenden Incident um einen eigenständigen Compliance-Verstoß. Der daraus abgeleitete RTO von 45 Minuten wird konsequent auf alle abhängigen Systeme vererbt.
 
 **Strikte Trennung interner und externer Identitäten.** Mitarbeiteridentitäten (Active Directory, IAM) und Kundenidentitäten (CIAM) werden getrennt geführt, damit eine Kompromittierung der öffentlich erreichbaren Kundenlogin-Fläche keinen Pfad zu internen Konten eröffnet.
 
-**Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der ISMS-Geltungsbereich schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen stehen daher nicht im Widerspruch, sondern greifen ineinander. Das ist im Scope Statement explizit ausgeführt.
+**Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der ISMS-Geltungsbereich schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen widersprechen sich daher nicht, sondern greifen ineinander.
 
 **Offengelegte Analysetiefe.** Die BIA-Tiefenanalyse umfasst drei repräsentative Kernprozesse; die übrigen sind grob eingestuft und für den nächsten Reviewzyklus vorgemerkt. Diese Begrenzung wird im Dokument benannt statt kaschiert.
+
+**Bewusste Auslassungen.** DORA Säule 5 (Informationsaustausch) sowie ISO 27001 Kap. 9 und 10 (Audit, Managementbewertung) werden nicht bearbeitet. Die Begründung steht im Compliance-Mapping.
 
 ---
 
@@ -103,7 +95,7 @@ Einige Punkte, an denen dieses Projekt bewusst über das Ausfüllen einer Vorlag
 
 Die Dokumente stützen sich auf unterschiedliche Quellenarten, und diese Unterscheidung ist bewusst:
 
-**Normativ abgesichert** sind Aufbau des ISMS, Scoping, BIA-Methodik und die Ableitung von RTO/RPO aus dem Maximum Tolerable Period of Disruption. Grundlage sind ISO/IEC 27001:2022, ISO/IEC 22301:2019, BSI-Standard 200-4 und der Verordnungstext von DORA.
+**Normativ abgesichert** sind Aufbau des Managementsystems, Scoping, BIA-Methodik und die Ableitung von RTO/RPO aus dem Maximum Tolerable Period of Disruption. Grundlage sind ISO/IEC 27001:2022, ISO/IEC 22301:2019, BSI-Standard 200-4 und der Verordnungstext von DORA.
 
 **Nicht normativ abgesichert** ist der Kern des MVC-Konzepts. Weder ISO/IEC 22301 noch DORA definieren eine "Minimum Viable Company" als eigenständige Methodik. Das Thema wird derzeit überwiegend **herstellerseitig** vorangetrieben, insbesondere von den Anbietern, die im **Gartner Magic Quadrant für Backup and Data Protection Platforms** als Leaders geführt werden (unter anderem Veeam, Rubrik, Commvault und Cohesity). Deren Fachbeiträge, Referenzmodelle und Recovery-Konzepte bilden derzeit die belastbarste verfügbare Quellenlage zu MVC.
 
