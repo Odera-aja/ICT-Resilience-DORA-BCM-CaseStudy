@@ -180,3 +180,14 @@ DORA Pillar 4):
 Diese Abhängigkeiten werden im Rahmen des Third-Party-Risikomanagements 
 gesondert bewertet und sind nicht Gegenstand der internen 
 BIA-Zeithorizont-Analyse.
+
+## 9. Freigabe/Genehmigung
+
+Diese ICT Business Continuity Policy wurde durch den Chief Risk Officer (CRO)
+der GermanCrypto Custody AG autorisiert. Die fachliche Verantwortung für
+Pflege und Umsetzung liegt beim Crisis Manager als Leiter des BCM-Departments
+(siehe Abschnitt 2).
+
+| Version | Datum | Autorisiert durch | Änderung |
+|---|---|---|---|
+| 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
