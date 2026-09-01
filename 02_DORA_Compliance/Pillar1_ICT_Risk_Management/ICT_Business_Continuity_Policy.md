@@ -51,7 +51,7 @@ Krisenstab setzt sich zusammen aus je einem Vertreter bzw. einer
 Vertreterin des Vorstands, der Unternehmenskommunikation (PR), der 
 IT-Abteilung sowie des internen Audit-Teams.
 
-## 3. Business Impact Analysis (BIA) — Methodik und Ergebnisse
+## 3. Business Impact Analysis (BIA): Methodik und Ergebnisse
 
 ### 3.1 Methodik
 
@@ -76,7 +76,7 @@ auf drei repräsentative Kernprozesse fokussiert. Die übrigen
 Kernprozesse werden grob eingestuft und im Rahmen des nächsten 
 BIA-Reviewzyklus (siehe Abschnitt 8) vollständig nachbewertet.
 
-### 3.2 Tiefenanalyse — Kernprozesse
+### 3.2 Tiefenanalyse der Kernprozesse
 
 | Prozess | RTO | RPO | Kritikalitätsverlauf (1h/4h/24h/3T) |
 |---|---|---|---|
@@ -92,7 +92,7 @@ liegenden Incident zusätzlich um einen eigenständigen Compliance-
 Verstoß) sowie die hohe Geschwindigkeit reputationsschädigender 
 Verbreitung in der Kryptobranche.
 
-### 3.3 Grobeinstufung — weitere Kernprozesse
+### 3.3 Grobeinstufung weiterer Kernprozesse
 
 | Prozess | Grobe Kritikalität | Begründung |
 |---|---|---|
@@ -132,7 +132,7 @@ strengeren RTO von 45 Minuten, auch wenn sie zusätzlich weniger
 zeitkritische Prozesse bedienen — dies spiegelt den in Abschnitt 3.2 
 beschriebenen Meta-Risiko-Charakter des Meldewesens wider.
 
-## 4. Minimum Viable Company (MVC) — Definition
+## 4. Minimum Viable Company (MVC): Definition
 
 Die Minimum Viable Company beschreibt die minimale Kombination aus 
 Systemen, Personal und Drittparteien-Anbindungen, die auch im 
@@ -180,6 +180,16 @@ DORA Pillar 4):
 Diese Abhängigkeiten werden im Rahmen des Third-Party-Risikomanagements 
 gesondert bewertet und sind nicht Gegenstand der internen 
 BIA-Zeithorizont-Analyse.
+
+---
+
+> 🔄 **Abschnitte 5 bis 8 befinden sich in Arbeit.** Vorgesehen sind:
+> **5. Wiederanlaufstrategien**, **6. Notfall- und Wiederanlaufpläne inklusive
+> Krisenkommunikation**, **7. Testing- und Übungszyklus** und
+> **8. Review-Zyklus und kontinuierliche Verbesserung**. Auf die Abschnitte 7
+> und 8 wird in Abschnitt 1 beziehungsweise 3.1 bereits verwiesen.
+
+---
 
 ## 9. Freigabe/Genehmigung
 
