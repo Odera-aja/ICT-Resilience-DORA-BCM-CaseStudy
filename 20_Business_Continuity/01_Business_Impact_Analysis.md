@@ -14,7 +14,104 @@ unterstützenden Systeme.
 Die Ergebnisse dieses Dokuments sind die unmittelbare Grundlage für die
 Definition der Minimum Viable Company (`02_Minimum_Viable_Company.md`).
 
-## 1. Methodik
+## 1. Prozesslandschaft und Auswahl der Analysetiefe
+
+Eine Business Impact Analysis ist nur so belastbar wie die Prozessliste, auf
+der sie aufsetzt. Dieser Abschnitt dokumentiert daher, wie die Kernprozesse
+der GermanCrypto Custody AG erhoben wurden und nach welchem Kriterium
+entschieden wurde, welche davon in der Tiefe und welche nur grob bewertet
+werden.
+
+### 1.1 Vorgehen bei der Prozessidentifikation
+
+Die Erhebung erfolgte in vier Schritten. Grundlage ist Schritt 1 der in
+Abschnitt 2 beschriebenen Methodik.
+
+**Schritt 1: Dokumentenanalyse.** Ausgewertet wurden das Organisationsprofil,
+die Leistungsbeschreibungen gegenüber Privat- und institutionellen Kunden,
+die Unterlagen zur Erlaubnis nach § 1 Abs. 1a Nr. 6 KWG sowie die
+Melde- und Berichtspflichten aus DORA und MiCA. Ergebnis war eine Bruttoliste
+aller wertschöpfenden und regulatorisch verpflichtenden Tätigkeiten.
+
+**Schritt 2: Strukturierte Interviews mit den Prozessverantwortlichen.** Je
+Bereich wurde ein Interview von 60 bis 90 Minuten geführt, geleitet vom
+Crisis Manager. Die Interviews folgten einem einheitlichen Leitfaden mit vier
+Kernfragen:
+
+- Welche Leistung erbringt Ihr Bereich, und gegenüber wem?
+- Was passiert konkret, wenn diese Leistung ausfällt, und ab wann wird es
+  kritisch?
+- Welche IT-Systeme und welche externen Partner benötigen Sie dafür
+  zwingend?
+- Wer bemerkt einen Ausfall zuerst, und über welchen Weg wird eskaliert?
+
+Die vierte Frage dient bewusst der Gegenprobe: Prozesse, deren Ausfall
+niemand kurzfristig bemerkt, sind selten kritisch, unabhängig davon, wie
+wichtig sie im Interview eingeschätzt werden.
+
+**Schritt 3: Konsolidierungsworkshop.** Die Einzelergebnisse wurden
+zusammengeführt, Dubletten bereinigt und Kernprozesse von unterstützenden
+Tätigkeiten abgegrenzt. Als Kernprozess gilt ein Prozess, der mindestens
+eines der beiden folgenden Kriterien erfüllt:
+
+1. Er erbringt unmittelbar die Leistung gegenüber dem Kunden, oder
+2. seine Unterbrechung führt innerhalb von 24 Stunden zu einem
+   regulatorischen Verstoß.
+
+Tätigkeiten, die keines der beiden Kriterien erfüllen, etwa Marketing oder
+Personalverwaltung, wurden bewusst nicht als Kernprozesse geführt. Sie
+bleiben damit außerhalb der BIA, ohne dass ihre Bedeutung für den
+Normalbetrieb bestritten wird.
+
+**Schritt 4: Validierung durch den Vorstand.** Die konsolidierte Liste wurde
+dem Vorstand vorgelegt und durch den Chief Risk Officer freigegeben. Diese
+Freigabe ist erforderlich, weil die Prozessliste festlegt, welche Teile des
+Unternehmens im Krisenfall Vorrang haben. Das ist eine unternehmerische
+Entscheidung und keine rein methodische.
+
+### 1.2 Identifizierte Kernprozesse
+
+Aus diesem Vorgehen ergaben sich sieben Kernprozesse:
+
+| # | Kernprozess | Erbrachte Leistung | Erfülltes Kriterium |
+|---|---|---|---|
+| 1 | Verwahrung digitaler Vermögenswerte | Sichere Verwahrung privater kryptographischer Schlüssel | Kundenleistung |
+| 2 | Transaktionsausführung | Abwicklung von Transaktionen im Kundenauftrag | Kundenleistung |
+| 3 | Regulatorisches Meldewesen | Melde- und Berichtspflichten gegenüber BaFin und ESMA | Regulatorisch |
+| 4 | Interne IT-Sicherheit und Zugriffssteuerung | Authentifizierung und Autorisierung aller internen Zugriffe | Beide |
+| 5 | Kundenzugriff und Reporting | Einsicht der Kunden in Bestände und Transaktionshistorie | Kundenleistung |
+| 6 | Zahlungsverkehr und Fiat-Anbindung | Ein- und Auszahlungen in Fiat-Währung | Kundenleistung |
+| 7 | Kunden-Onboarding und Identifikation | Aufnahme neuer Kunden inklusive Identitätsprüfung | Regulatorisch |
+
+### 1.3 Auswahl der Prozesse für die Tiefenanalyse
+
+Eine vollständige Tiefenanalyse aller sieben Prozesse war im ersten
+BIA-Zyklus nicht leistbar. Die Auswahl der drei tief analysierten Prozesse
+erfolgte deshalb nicht nach gefühlter Wichtigkeit, sondern nach einem
+inhaltlichen Kriterium: **Jede der im Institut auftretenden Schadensarten
+sollte mindestens einmal vollständig durchgerechnet werden.**
+
+Bei einem Krypto-Verwahrer lassen sich drei grundlegend verschiedene
+Schadensarten unterscheiden, die sich in Verlauf, Umkehrbarkeit und
+Adressat unterscheiden:
+
+| Schadensart | Charakteristik | Repräsentiert durch |
+|---|---|---|
+| **Irreversibler Vermögensverlust** | Nicht rückholbar, kein Korrekturmechanismus, unmittelbarer Kundenschaden | Verwahrung digitaler Vermögenswerte |
+| **Unmittelbarer Geschäftsstillstand** | Umkehrbar, aber mit sofortiger Wirkung auf Umsatz und Kundenvertrauen | Transaktionsausführung |
+| **Regulatorischer Verstoß** | Eigenständiger Schaden, unabhängig vom auslösenden Ereignis, Adressat ist die Aufsicht | Regulatorisches Meldewesen |
+
+Damit ist jede Auswirkungskategorie der in Abschnitt 2 definierten
+Bewertungsskala mindestens einmal in voller Tiefe belegt. Die
+Grobeinstufung der übrigen vier Prozesse in Abschnitt 4 lässt sich an
+diesen drei Referenzfällen kalibrieren, statt frei geschätzt zu werden.
+
+Die vollständige Tiefenanalyse der Prozesse 4 bis 7 erfolgt im nächsten
+BIA-Reviewzyklus (siehe `00_ICT_Business_Continuity_Policy.md`, Abschnitt 4).
+
+---
+
+## 2. Methodik
 
 Die Business Impact Analysis wird gemäß DORA Art. 11 Abs. 5, ISO/IEC 
 22301:2019 Kapitel 8.2.2 und BSI-Standard 200-4 durchgeführt und folgt 
@@ -32,12 +129,12 @@ Schaden an Leib und Leben. Die Gesamteinstufung eines Zeitpunkts folgt
 dem Worst-Case-Prinzip: Der höchste Einzelwert über alle Kategorien 
 bestimmt die Gesamtkritikalität.
 
-Aus Kapazitätsgründen wird die vollständige BIA-Tiefenanalyse zunächst 
-auf drei repräsentative Kernprozesse fokussiert. Die übrigen 
-Kernprozesse werden grob eingestuft und im Rahmen des nächsten 
-BIA-Reviewzyklus (siehe `00_ICT_Business_Continuity_Policy.md`, Abschnitt 4) vollständig nachbewertet.
+Die Tiefenanalyse ist im ersten Zyklus auf drei Kernprozesse begrenzt. Die
+Auswahl und ihre Begründung sind in Abschnitt 1.3 dokumentiert; die übrigen
+Kernprozesse werden grob eingestuft und im nächsten BIA-Reviewzyklus
+vollständig nachbewertet.
 
-## 2. Tiefenanalyse der Kernprozesse
+## 3. Tiefenanalyse der Kernprozesse
 
 | Prozess | RTO | RPO | Kritikalitätsverlauf (1h/4h/24h/3T) |
 |---|---|---|---|
@@ -53,7 +150,7 @@ liegenden Incident zusätzlich um einen eigenständigen Compliance-
 Verstoß) sowie die hohe Geschwindigkeit reputationsschädigender 
 Verbreitung in der Kryptobranche.
 
-## 3. Grobeinstufung weiterer Kernprozesse
+## 4. Grobeinstufung weiterer Kernprozesse
 
 | Prozess | Grobe Kritikalität | Begründung |
 |---|---|---|
@@ -62,7 +159,7 @@ Verbreitung in der Kryptobranche.
 | Zahlungsverkehr/Fiat-Anbindung | Hoch | Direkter Geschäftsstillstand für Ein-/Auszahlungen, jedoch kein irreversibler Vermögensverlust |
 | Kunden-Onboarding & Identifikation | Mittel | Betrifft primär Neugeschäft; bestehende Kundenbeziehungen und -vermögen nicht unmittelbar gefährdet |
 
-## 4. Abhängigkeitsanalyse und abgeleitete System-RTOs
+## 5. Abhängigkeitsanalyse und abgeleitete System-RTOs
 
 Aufbauend auf der Prozess-BIA wird für jedes unterstützende System 
 ermittelt, von welchen Kernprozessen es abhängt. Der RTO eines Systems 
