@@ -20,7 +20,7 @@ Details zu Organisation, Infrastruktur und Stakeholdern sind im
 Organisationsprofil (`00_Governance/00_Organisationsprofil.md`) 
 dokumentiert und werden an dieser Stelle nicht dupliziert.
 
-## 3. Geltungsbereich (Scope) — positiv definiert
+## 3. Geltungsbereich (Scope): positiv definiert
 
 ### Organisatorische Grenzen
 Der Geltungsbereich des ISMS umfasst die gesamte GermanCrypto Custody AG, 
