@@ -90,4 +90,4 @@ Grundlage für alle nachfolgenden ISMS-Dokumente.
 
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
-| 1.0 | [27.07.2026] | CISO | Initiale Freigabe |
+| 1.0 | 27.07.2026 | CISO | Initiale Freigabe |
