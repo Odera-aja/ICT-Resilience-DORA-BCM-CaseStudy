@@ -51,7 +51,7 @@ Das Szenario ist bewusst so gewählt, dass sich Resilienzfragen zuspitzen: Bei e
 │   └── 01_ISMS_Scope_Statement.md          Geltungsbereich nach ISO/IEC 27001:2022, Kap. 4.3
 │
 ├── 01_Risk_Management/                     🔜 geplant
-│   └──                                     Risikoanalyse, Statement of Applicability, Annex-A-Controls
+│                                            Risikoanalyse, Statement of Applicability, Annex-A-Controls
 │
 └── 02_DORA_Compliance/                     🔄 in Arbeit
     └── Pillar1_ICT_Risk_Management/
@@ -73,7 +73,7 @@ Die Nummerierung folgt der inhaltlichen Reihenfolge: zuerst die Governance-Grund
 | BIA, Tiefenanalyse Kernprozesse | ✅ fertig (3 Prozesse, übrige grob eingestuft) |
 | Abhängigkeitsanalyse und abgeleitete System-RTOs | ✅ fertig |
 | Minimum Viable Company, Definition | ✅ fertig |
-| Wiederanlaufstrategien | 🔄 in Arbeit |
+| Wiederanlaufstrategien | 🔜 geplant |
 | Notfall- und Wiederanlaufpläne | 🔜 geplant |
 | Krisenkommunikation | 🔜 geplant |
 | Testing- und Übungszyklus | 🔜 geplant |
