@@ -64,9 +64,17 @@ werden können.
 |---|---|---|
 | `01_Business_Impact_Analysis.md` | Methodik, Kritikalitätsbewertung der Kernprozesse, Abhängigkeitsanalyse, abgeleitete System-RTOs | ✅ fertig |
 | `02_Minimum_Viable_Company.md` | Normative Einordnung, Viabilitätsdimensionen, Ausschlussumfang, kritische Systeme in zwei Schichten, Mindestbesetzung, Drittparteien, Notfalldokumentation, Wiederanlaufsequenz, Betriebsdauer | ✅ fertig |
-| `03_Wiederanlaufstrategien.md` | Strategien zur Wiederherstellung der MVC-Systeme | 🔜 geplant |
-| `04_Testing_und_Uebungszyklus.md` | Testarten, Frequenz, Nachbereitung, Wirksamkeitsnachweis | 🔜 geplant |
-| `05_Notfall_und_Krisenkommunikation.md` | Meldewege, Eskalation, interne und externe Kommunikation | 🔜 geplant |
+| `03_Wiederanlaufstrategien.md` | Strategische Optionen zur Wiederherstellung der MVC-Systeme (ISO/IEC 22301 Kap. 8.3) | 🔜 geplant |
+| `04_Wiederanlaufplaene.md` | Konkrete Pläne und Verfahren je System, Zuständigkeiten und Ablauf (ISO/IEC 22301 Kap. 8.4) | 🔜 geplant |
+| `05_Backup_und_redundante_Kapazitaeten.md` | Backup-Richtlinien, Wiederherstellungsverfahren, redundante ICT-Kapazitäten (DORA Art. 12) | 🔜 geplant |
+| `06_Krisenkommunikation.md` | Meldewege, Eskalation, interne und externe Kommunikation (DORA Art. 11 Abs. 2) | 🔜 geplant |
+| `07_Testing_und_Uebungszyklus.md` | Testarten, Frequenz, Nachbereitung, Wirksamkeitsnachweis (ISO/IEC 22301 Kap. 8.5) | 🔜 geplant |
+| `08_Review_und_Verbesserung.md` | Überprüfung der Wirksamkeit, Kennzahlen, Korrekturmaßnahmen (ISO/IEC 22301 Kap. 9 und 10) | 🔜 geplant |
+
+Ergänzend außerhalb dieses Ordners: die BC-bezogene Risikobeurteilung nach
+ISO/IEC 22301 Kap. 8.2 in `10_Risikomanagement/00_BC_Risikobeurteilung.md`.
+Sie ergänzt die BIA um die Frage, wodurch eine Unterbrechung entstehen kann,
+während die BIA deren Auswirkung bewertet.
 
 ## 4. Überprüfung und Fortschreibung
 
