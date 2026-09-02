@@ -58,3 +58,4 @@ Prüfung durch eine akkreditierte Stelle.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 01.09.2026 | CISO | Initiale Fassung |
+| 1.1 | 02.09.2026 | CISO | Zusammengeführter Geltungsbereich, DORA Art. 12 und ISO/IEC 22301 Kap. 8.4, 9 und 10 aufgenommen, Statement of Applicability als bewusste Auslassung ergänzt |
