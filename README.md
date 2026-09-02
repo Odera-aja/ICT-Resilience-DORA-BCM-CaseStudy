@@ -1,6 +1,8 @@
 # ICT Resilience Framework: GermanCrypto Custody AG
 
-**Eine durchgängig ausgearbeitete Fallstudie zu digitaler operationaler Resilienz in einem BaFin-regulierten Finanzinstitut. Schwerpunkt: Business Continuity Management und die Minimum Viable Company.**
+**Dieses Repository beantwortet eine einzige Frage: Welcher Teil eines regulierten Finanzinstituts muss im schwersten Krisenfall überleben, und wie kommt man nachvollziehbar zu dieser Antwort?**
+
+Am Beispiel eines fiktiven, BaFin-regulierten Krypto-Verwahrers wird die vollständige Kette gezeigt, vom Organisationsprofil über die Business Impact Analysis bis zur Minimum Viable Company. Kein Ergebnis wird dabei behauptet: Jeder RTO, jede Kritikalitätsstufe und jedes überlebensnotwendige System ist aus der vorangegangenen Analyse abgeleitet. Regulatorischer Rahmen ist DORA, methodische Grundlage sind ISO/IEC 27001, ISO/IEC 22301 und BSI-Standard 200-4.
 
 > ⚠️ Die **GermanCrypto Custody AG ist ein fiktives Unternehmen.** Sämtliche Zahlen, Systeme, Prozesse und Organisationsstrukturen sind erfunden. Dieses Repository ist ein persönliches Fach- und Lernprojekt und bildet keine reale Organisation ab.
 
@@ -61,6 +63,17 @@ Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IE
 90_Compliance_Mapping/                         querschnittlich, kein eigener Arbeitsstrang
     DORA_ISO_Mapping.md                        ✅ Welches Dokument erfüllt welche Anforderung
 ```
+
+**Warum die übrigen DORA-Säulen überhaupt auftauchen.** Die Minimum Viable Company benennt, welche Systeme überleben müssen. Vier Rückfragen darauf lassen sich innerhalb dieses Kapitels nicht beantworten, und genau dafür stehen die angrenzenden Ordner:
+
+| Rückfrage | Beantwortet in |
+|---|---|
+| Überleben **wogegen**? Die BIA bewertet die Auswirkung eines Ausfalls, nicht dessen Ursache. | `10_Risikomanagement/` |
+| Was, wenn eine **kritische Drittpartei** ausfällt? Die MVC hängt unter anderem am HSM-Hersteller und am Blockchain-Node-Anbieter. | `30_Third_Party_Risk/` |
+| **Wodurch wird der MVC-Zustand ausgelöst**, und wer erkennt ihn? Die schärfste Zeitvorgabe des Instituts, 45 Minuten, stammt aus der Meldepflicht nach DORA Art. 19. | `40_Incident_Management/` |
+| Woher ist bekannt, dass die MVC **tatsächlich funktioniert**? Eine ungetestete MVC ist eine Annahme, keine Fähigkeit. | `50_Resilience_Testing/` |
+
+Säule 5 (Informations- und Erkenntnisaustausch, DORA Art. 45) trägt zu dieser Fragestellung nichts bei und ist deshalb als einzige vollständig ausgeklammert. Die Begründung steht im Compliance-Mapping.
 
 Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der jeweils aktuelle Stand ist der veröffentlichte Stand; unfertige Kapitel werden nicht vorab hochgeladen.
 
