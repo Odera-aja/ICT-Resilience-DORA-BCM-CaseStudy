@@ -23,7 +23,7 @@ Nachvollziehbarkeit übernimmt stattdessen dieses Mapping.
 | `10_Risikomanagement/` | Art. 6 bis 10 (ICT-Risikomanagementrahmen) | Kap. 6.1.2, 6.1.3, 8.2, 8.3, Anhang A | – | 🔜 |
 | `20_Business_Continuity/00_ICT_Business_Continuity_Policy.md` | **Art. 11** (ICT Business Continuity Policy) | Kap. 5.2 (Politik) | Kap. 5.2, 8.1 | ✅ |
 | `20_Business_Continuity/01_Business_Impact_Analysis.md` | **Art. 11 Abs. 5** | – | **Kap. 8.2.2** (BIA) | ✅ |
-| `20_Business_Continuity/02_Minimum_Viable_Company.md` | Art. 11 Abs. 2 und 4 | – | Kap. 8.2.2, 8.3 | ✅ |
+| `20_Business_Continuity/02_Minimum_Viable_Company.md` | **Art. 11 Abs. 2 und 4**, Bezug zu Art. 12 (Clean-Room-Prinzip) | Kap. 5.3 (Rollen im Krisenstab) | **Kap. 8.2.2 (MBCO)**, Kap. 8.3 | ✅ |
 | `20_Business_Continuity/03_Wiederanlaufstrategien.md` | Art. 11, **Art. 12** (Backup und Wiederherstellung) | Anhang A 5.29, 5.30 | **Kap. 8.3** | 🔜 |
 | `20_Business_Continuity/04_Testing_und_Uebungszyklus.md` | Art. 11 Abs. 6 | – | **Kap. 8.5** (Übungsprogramm) | 🔜 |
 | `20_Business_Continuity/05_Notfall_und_Krisenkommunikation.md` | Art. 11 Abs. 2, **Art. 14** (Kommunikation) | – | Kap. 8.4.3 | 🔜 |
