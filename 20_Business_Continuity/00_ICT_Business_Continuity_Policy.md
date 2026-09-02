@@ -19,8 +19,8 @@ auch im schwersten Krisenfall aufrechterhalten werden müssen.
 Regulatorische Compliance (insbesondere gegenüber DORA) ist dabei eine 
 Konsequenz echter operativer Resilienz, nicht deren Selbstzweck. Diese 
 Policy dient als übergeordnetes Rahmenwerk; die konkrete Umsetzung und 
-regelmäßige Überprüfung ihrer Wirksamkeit erfolgt über den in Abschnitt 7 
-definierten Testing- und Übungszyklus.
+regelmäßige Überprüfung ihrer Wirksamkeit erfolgt über den Testing- und Übungszyklus 
+(`07_Testing_und_Uebungszyklus.md`, in Arbeit).
 
 **Regulatorischer Rahmen:**
 - **DORA Art. 11** (Verordnung (EU) 2022/2554) – verpflichtet 
@@ -88,3 +88,4 @@ Verantwortung liegt beim Crisis Manager als Leiter des BCM-Departments.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
+| 2.0 | 02.09.2026 | CRO | Aufteilung in Rahmendokument und mitgeltende Dokumente, Dokumentenlandschaft an DORA Art. 12 und ISO/IEC 22301 Kap. 8.3, 8.4, 9 und 10 angepasst |
