@@ -63,7 +63,7 @@ werden können.
 | Dokument | Inhalt | Stand |
 |---|---|---|
 | `01_Business_Impact_Analysis.md` | Methodik, Kritikalitätsbewertung der Kernprozesse, Abhängigkeitsanalyse, abgeleitete System-RTOs | ✅ fertig |
-| `02_Minimum_Viable_Company.md` | Kritische Systeme, Mindestpersonalbesetzung, kritische Drittparteien | ✅ fertig |
+| `02_Minimum_Viable_Company.md` | Normative Einordnung, Viabilitätsdimensionen, Ausschlussumfang, kritische Systeme in zwei Schichten, Mindestbesetzung, Drittparteien, Notfalldokumentation, Wiederanlaufsequenz, Betriebsdauer | ✅ fertig |
 | `03_Wiederanlaufstrategien.md` | Strategien zur Wiederherstellung der MVC-Systeme | 🔜 geplant |
 | `04_Testing_und_Uebungszyklus.md` | Testarten, Frequenz, Nachbereitung, Wirksamkeitsnachweis | 🔜 geplant |
 | `05_Notfall_und_Krisenkommunikation.md` | Meldewege, Eskalation, interne und externe Kommunikation | 🔜 geplant |
