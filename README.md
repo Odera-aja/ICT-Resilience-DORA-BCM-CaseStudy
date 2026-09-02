@@ -36,27 +36,30 @@ Das Szenario ist bewusst so gewählt, dass sich Resilienzfragen zuspitzen: Bei e
 Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IEC 27001 und ISO/IEC 22301 überlappen sich inhaltlich stark. Ein Dokument erfüllt meist gleichzeitig Anforderungen aus mehreren Quellen, eine Ablage nach Regelwerk würde dieselben Inhalte doppelt führen. Die regulatorische Nachvollziehbarkeit übernimmt deshalb das Compliance-Mapping.
 
 ```
-00_Governance/                              Kontext, Geltungsbereiche, Rollen
-    00_Organisationsprofil.md               ✅ Unternehmen, Infrastruktur, Stakeholder
-    01_BCMS_Scope_Statement.md              🔜 Geltungsbereich BCMS, ISO 22301 Kap. 4.3
-    02_ISMS_Scope_Statement.md              ✅ Geltungsbereich ISMS, ISO 27001 Kap. 4.3
+00_Governance/                                 Kontext, Geltungsbereich, Rollen
+    00_Organisationsprofil.md                  ✅ Unternehmen, Bereiche, Infrastruktur, Stakeholder
+    01_Geltungsbereich.md                      ✅ ISMS (ISO 27001 Kap. 4.3) und BCMS (ISO 22301 Kap. 4.3)
 
-10_Risikomanagement/                        🔜 Risikoanalyse, Statement of Applicability, Annex-A-Controls
+10_Risikomanagement/                           Säule 1, Risikoseite
+    00_BC_Risikobeurteilung.md                 🔜 Störungsszenarien, ISO 22301 Kap. 8.2
 
-20_Business_Continuity/                     Schwerpunkt dieses Projekts
-    00_ICT_Business_Continuity_Policy.md    ✅ Rahmenwerk, Governance, Rollen
-    01_Business_Impact_Analysis.md          ✅ Methodik, Kritikalität, System-RTOs
-    02_Minimum_Viable_Company.md            ✅ Kritische Systeme, Personal, Drittparteien
-    03_Wiederanlaufstrategien.md            🔜
-    04_Testing_und_Uebungszyklus.md         🔜
-    05_Notfall_und_Krisenkommunikation.md   🔜
+20_Business_Continuity/                        Säule 1, Schwerpunkt dieses Projekts
+    00_ICT_Business_Continuity_Policy.md       ✅ Rahmenwerk, Governance, Rollen
+    01_Business_Impact_Analysis.md             ✅ Prozesslandschaft, Kritikalität, System-RTOs
+    02_Minimum_Viable_Company.md               ✅ Ausschlussumfang, Schichtung, Sequenz, Betriebsdauer
+    03_Wiederanlaufstrategien.md               🔜 ISO 22301 Kap. 8.3
+    04_Wiederanlaufplaene.md                   🔜 ISO 22301 Kap. 8.4
+    05_Backup_und_redundante_Kapazitaeten.md   🔜 DORA Art. 12
+    06_Krisenkommunikation.md                  🔜 DORA Art. 11 Abs. 2
+    07_Testing_und_Uebungszyklus.md            🔜 ISO 22301 Kap. 8.5
+    08_Review_und_Verbesserung.md              🔜 ISO 22301 Kap. 9 und 10
 
-30_Third_Party_Risk/                        🔜 DORA Art. 28 bis 30
-40_Incident_Management/                     🔜 DORA Art. 17 bis 23
-50_Resilience_Testing/                      🔜 DORA Art. 24 bis 27
+30_Third_Party_Risk/                           🔜 Säule 4, DORA Art. 28 bis 30
+40_Incident_Management/                        🔜 Säule 2, DORA Art. 17 bis 23
+50_Resilience_Testing/                         🔜 Säule 3, DORA Art. 24 bis 27
 
-90_Compliance_Mapping/
-    DORA_ISO_Mapping.md                     ✅ Welches Dokument erfüllt welche Anforderung
+90_Compliance_Mapping/                         querschnittlich, kein eigener Arbeitsstrang
+    DORA_ISO_Mapping.md                        ✅ Welches Dokument erfüllt welche Anforderung
 ```
 
 Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der jeweils aktuelle Stand ist der veröffentlichte Stand; unfertige Kapitel werden nicht vorab hochgeladen.
@@ -68,12 +71,12 @@ Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der 
 | Rahmenwerk | Rolle in diesem Projekt |
 |---|---|
 | **Verordnung (EU) 2022/2554 (DORA)** | Regulatorischer Auftrag. Art. 11 für Business Continuity, Art. 12 für Backup und Wiederherstellung, Art. 19 für Meldepflichten, Art. 4 für den Verhältnismäßigkeitsgrundsatz |
-| **ISO/IEC 27001:2022** | Managementsystem-Struktur. Kap. 4.3 (Geltungsbereich), Kap. 5.3 (Rollen), Anhang A als Kontrollrahmen |
-| **ISO/IEC 22301:2019** | BCM-Methodik. Kap. 4.3 (Geltungsbereich BCMS), Kap. 8.2.2 (Business Impact Analysis), Kap. 8.3 (Strategien) |
+| **ISO/IEC 27001:2022** | Managementsystem-Struktur. Kap. 4.3 (Geltungsbereich), Kap. 5.3 (Rollen und Verantwortlichkeiten) |
+| **ISO/IEC 22301:2019** | BCM-Methodik. Führende BCM-Methodik. Kap. 4.3 (Geltungsbereich BCMS), Kap. 8.2 (Risikobeurteilung und BIA), Kap. 8.3 (Strategien), Kap. 8.4 (Pläne), Kap. 8.5 (Übungen), Kap. 9 und 10 (Bewertung und Verbesserung) |
 | **BSI-Standard 200-4** | Deutsche BCM-Methodik als ergänzende nationale Referenz |
 | **KWG / MiCA** | Bestimmen den aufsichtsrechtlichen Status des Fallunternehmens |
 
-**Zum Verhältnis von ISO 27001 und DORA:** ISO/IEC 27001 ist ein freiwilliger, zertifizierbarer Managementsystem-Standard und liefert die Organisationsmaschinerie. DORA ist eine verpflichtende Verordnung und definiert die zu erreichenden Ergebnisse, ohne eine Organisationsform vorzugeben. Das ISMS ist damit das Vehikel, die DORA-Anforderungen sind das Ziel. Wie sich der bewusst eng gefasste ISO-Geltungsbereich zum weiten DORA-Anwendungsbereich verhält, ist im ISMS Scope Statement, Abschnitt 6, ausgeführt.
+**Zum Verhältnis von ISO 27001 und DORA:** ISO/IEC 27001 ist ein freiwilliger, zertifizierbarer Managementsystem-Standard und liefert die Organisationsmaschinerie. DORA ist eine verpflichtende Verordnung und definiert die zu erreichenden Ergebnisse, ohne eine Organisationsform vorzugeben. Das ISMS ist damit das Vehikel, die DORA-Anforderungen sind das Ziel. Wie sich der bewusst eng gefasste ISO-Geltungsbereich zum weiten DORA-Anwendungsbereich verhält, ist im Geltungsbereichs-Dokument, Abschnitt 8, ausgeführt.
 
 ---
 
@@ -83,7 +86,7 @@ Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der 
 
 **Strikte Trennung interner und externer Identitäten.** Mitarbeiteridentitäten (Active Directory, IAM) und Kundenidentitäten (CIAM) werden getrennt geführt, damit eine Kompromittierung der öffentlich erreichbaren Kundenlogin-Fläche keinen Pfad zu internen Konten eröffnet.
 
-**Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der ISMS-Geltungsbereich schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen widersprechen sich daher nicht, sondern greifen ineinander.
+**Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der Geltungsbereich der Managementsysteme schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen widersprechen sich daher nicht, sondern greifen ineinander.
 
 **Die MVC als Ausschluss-Entscheidung.** Das Kapitel legt nicht nur fest, welche Systeme überleben müssen, sondern welche Prozesse im Krisenfall bewusst ruhen, in welcher Reihenfolge wiederangelaufen wird und wie lange der MVC-Zustand tragfähig ist. Der begrenzende Faktor ist dabei nicht die Technik, sondern das Kundenvertrauen.
 
