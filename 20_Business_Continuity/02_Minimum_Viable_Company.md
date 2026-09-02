@@ -124,8 +124,7 @@ geschäftskritischen Systemen verfügbar sein.
 | Secure Gateways | 45 min | Gesicherter Zugang der Wiederherstellungsteams zu den Zielsystemen |
 | CIAM (Kundenauthentifizierung) | 1 h | Identitätssystem, wird aber für den Wiederanlauf selbst nicht benötigt und daher innerhalb der Schicht zuletzt wiederhergestellt |
 
-Die Trennung interner und externer Identitäten (Abschnitt 3.4 der Business
-Impact Analysis) wirkt sich hier unmittelbar aus: Weil CIAM architektonisch
+Die Trennung interner und externer Identitäten (`01_Business_Impact_Analysis.md`, Abschnitt 5.2) wirkt sich hier unmittelbar aus: Weil CIAM architektonisch
 von Active Directory getrennt ist, kann die interne Wiederherstellung
 beginnen, ohne dass die öffentlich erreichbare Kundenlogin-Fläche
 verfügbar oder vertrauenswürdig sein muss.
