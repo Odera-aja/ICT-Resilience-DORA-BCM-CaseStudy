@@ -85,6 +85,8 @@ Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der 
 
 **Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der ISMS-Geltungsbereich schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen widersprechen sich daher nicht, sondern greifen ineinander.
 
+**Die MVC als Ausschluss-Entscheidung.** Das Kapitel legt nicht nur fest, welche Systeme überleben müssen, sondern welche Prozesse im Krisenfall bewusst ruhen, in welcher Reihenfolge wiederangelaufen wird und wie lange der MVC-Zustand tragfähig ist. Der begrenzende Faktor ist dabei nicht die Technik, sondern das Kundenvertrauen.
+
 **Offengelegte Analysetiefe.** Die BIA-Tiefenanalyse umfasst drei repräsentative Kernprozesse; die übrigen sind grob eingestuft und für den nächsten Reviewzyklus vorgemerkt. Diese Begrenzung wird im Dokument benannt statt kaschiert.
 
 **Bewusste Auslassungen.** DORA Säule 5 (Informationsaustausch) sowie ISO 27001 Kap. 9 und 10 (Audit, Managementbewertung) werden nicht bearbeitet. Die Begründung steht im Compliance-Mapping.
