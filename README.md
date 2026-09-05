@@ -52,7 +52,7 @@ Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IE
     03_Wiederanlaufstrategien.md               🔜 ISO 22301 Kap. 8.3
     04_Wiederanlaufplaene.md                   🔜 ISO 22301 Kap. 8.4
     05_Backup_und_redundante_Kapazitaeten.md   🔜 DORA Art. 12
-    06_Krisenkommunikation.md                  🔜 DORA Art. 11 Abs. 2
+    06_Krisenkommunikation.md                  🔜 DORA Art. 11 Abs. 2, CEN/TS 17091
     07_Testing_und_Uebungszyklus.md            🔜 ISO 22301 Kap. 8.5
     08_Review_und_Verbesserung.md              🔜 ISO 22301 Kap. 9 und 10
 
