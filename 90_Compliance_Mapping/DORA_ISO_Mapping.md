@@ -26,7 +26,7 @@ Nachvollziehbarkeit übernimmt stattdessen dieses Mapping.
 | `20_Business_Continuity/03_Wiederanlaufstrategien.md` | Art. 11 | Anhang A 5.29, 5.30 | **Kap. 8.3** (Strategien und Lösungen) | 🔜 |
 | `20_Business_Continuity/04_Wiederanlaufplaene.md` | Art. 11 Abs. 3 | Anhang A 5.29 | **Kap. 8.4** (Pläne und Verfahren) | 🔜 |
 | `20_Business_Continuity/05_Backup_und_redundante_Kapazitaeten.md` | **Art. 12** (Backup, Wiederherstellung, redundante Kapazitäten) | Anhang A 8.13, 8.14 | Kap. 8.3 | 🔜 |
-| `20_Business_Continuity/06_Krisenkommunikation.md` | Art. 11 Abs. 2, **Art. 14** (Kommunikation) | – | Kap. 8.4.3, ergänzend **CEN/TS 17091** (Krisenmanagement) | 🔜 |
+| `20_Business_Continuity/06_Krisenkommunikation.md` | Art. 11 Abs. 2, **Art. 14** (Kommunikation) | – | Kap. 8.4.3, ergänzend **EN ISO 22361:2022** (Krisenmanagement) | 🔜 |
 | `20_Business_Continuity/07_Testing_und_Uebungszyklus.md` | Art. 11 Abs. 6 | – | **Kap. 8.5** (Übungsprogramm) | 🔜 |
 | `20_Business_Continuity/08_Review_und_Verbesserung.md` | Art. 11 Abs. 6, Art. 13 (Lernen und Weiterentwicklung) | – | **Kap. 9 und 10** | 🔜 |
 | `30_Third_Party_Risk/` | **Art. 28 bis 30** (ICT-Drittparteienrisiko) | Anhang A 5.19 bis 5.23 | Kap. 8.2.3 | 🔜 |
@@ -51,9 +51,12 @@ Nachweis erbringt. Die übrigen Angaben sind unterstützende Bezüge.
 ## Methodischer Hinweis
 
 Die Zuordnungen beruhen auf dem Verordnungstext von DORA sowie den
-Normtexten von ISO/IEC 27001:2022 und ISO/IEC 22301:2019. Für das Kapitel
-zur Krisenkommunikation wird ergänzend CEN/TS 17091 als europäische
-Spezifikation für Krisenmanagement herangezogen. Sie sind eine
+Normtexten von ISO/IEC 27001:2022 und ISO/IEC 22301:2019. Für das Kapitel zur Krisenkommunikation wird ergänzend **EN ISO 22361:2022**
+(Security and resilience, Crisis management, Guidelines) herangezogen. Diese
+Norm hat im Oktober 2022 die zurückgezogene CEN/TS 17091:2018 ersetzt. Als
+Leitliniennorm enthält sie Empfehlungen, keine zertifizierbaren
+Anforderungen; eine Zuordnung erfolgt daher als methodische Referenz, nicht
+als Nachweispflicht. Sie sind eine
 fachliche Einschätzung im Rahmen einer Fallstudie und ersetzen keine
 Prüfung durch eine akkreditierte Stelle.
 
