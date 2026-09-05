@@ -47,12 +47,49 @@ zugleich das IT Service Continuity Management (ITSCM)-Team, das für
 die technische Wiederherstellung von IT-Services im Krisenfall 
 verantwortlich ist.
 
-Im Ereignisfall tritt der Krisenstab zusammen – ein temporäres, 
-funktionsübergreifendes Entscheidungsgremium, das ausschließlich im 
-Krisenfall aktiviert wird und im Normalbetrieb nicht besteht. Der 
-Krisenstab setzt sich zusammen aus je einem Vertreter bzw. einer 
-Vertreterin des Vorstands, der Unternehmenskommunikation (PR), der 
-IT-Abteilung sowie des internen Audit-Teams.
+Im Ereignisfall tritt der Krisenstab zusammen, ein temporäres,
+funktionsübergreifendes Entscheidungsgremium, das ausschließlich im
+Krisenfall aktiviert wird und im Normalbetrieb nicht besteht. Der
+Krisenstab setzt sich zusammen aus je einem Vertreter bzw. einer
+Vertreterin des Vorstands, der Unternehmenskommunikation (PR), der
+IT-Abteilung, des internen Audit-Teams sowie des Bereichs Recht und
+Datenschutz.
+
+Die fünfte Rolle ist bewusst gesetzt. Priorisierungsentscheidungen im
+Krisenfall berühren regelmäßig datenschutz- und aufsichtsrechtliche
+Pflichten, die eigenen Fristen unterliegen und sich nicht nachholen lassen.
+Ohne eine dafür verantwortliche Stimme im Gremium bleibt dieser Konflikt
+entweder unbemerkt oder wird improvisiert.
+
+### 2.1 Entscheidungsbefugnis im Konfliktfall
+
+Im Krisenfall treffen regelmäßig Positionen aufeinander, die jeweils
+berechtigt sind und sich dennoch ausschließen. Ein typisches Beispiel ist
+die Abwägung zwischen der sofortigen Wiederherstellung eines Systems zur
+Wiedererlangung der Geschäftsfähigkeit und der vorherigen forensischen
+Sicherung, die für die Meldepflichten nach Art. 33 DSGVO und DORA Art. 19
+erforderlich sein kann.
+
+**Solche Zielkonflikte lassen sich nicht vollständig vorwegnehmen.** Die
+Zahl möglicher Kollisionen ist zu groß, und der reale Vorfall weicht stets
+vom geplanten Szenario ab. Vorab festlegbar ist jedoch, **wer im
+Konfliktfall entscheidet und mit welchem Mandat**. Es gilt daher folgende
+Regelung:
+
+| Situation | Entscheidungsbefugnis |
+|---|---|
+| Maßnahmen **innerhalb** des vom Vorstand freigegebenen MVC-Umfangs | Der Crisis Manager entscheidet eigenständig. Keine Rückfrage erforderlich |
+| **Abweichung** vom freigegebenen MVC-Umfang, etwa vorgezogene Wiederherstellung eines ausgeschlossenen Prozesses | Entscheidung des Krisenstabs mit einfacher Mehrheit. Bei Stimmengleichheit entscheidet das Vorstandsmitglied |
+| Entscheidungen mit **datenschutz- oder aufsichtsrechtlicher Tragweite** | Vor der Entscheidung ist die dokumentierte Stellungnahme der Rolle Recht und Datenschutz einzuholen. Die Rolle hat ein Anhörungsrecht, kein Vetorecht |
+| Maßnahmen mit **irreversibler Wirkung** auf Kundenvermögen | Ausschließlich der Vorstand, keine Delegation |
+
+Jede Abweichung vom freigegebenen MVC-Umfang wird im Krisenprotokoll mit
+Zeitpunkt, Begründung und Entscheidungsträger festgehalten. Diese
+Protokollierung ist zugleich Grundlage der Nachbereitung und des
+Wirksamkeitsnachweises gegenüber der Aufsicht.
+
+**Der zugrundeliegende Grundsatz:** Nicht der Zielkonflikt selbst wird
+vorab entschieden, sondern die Zuständigkeit für ihn.
 
 ## 3. Mitgeltende Dokumente
 
@@ -89,3 +126,4 @@ Verantwortung liegt beim Crisis Manager als Leiter des BCM-Departments.
 |---|---|---|---|
 | 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
 | 2.0 | 02.09.2026 | CRO | Aufteilung in Rahmendokument und mitgeltende Dokumente, Dokumentenlandschaft an DORA Art. 12 und ISO/IEC 22301 Kap. 8.3, 8.4, 9 und 10 angepasst |
+| 2.1 | 05.09.2026 | CRO | Krisenstab um die Rolle Recht und Datenschutz erweitert, Entscheidungsbefugnis im Konfliktfall geregelt |
