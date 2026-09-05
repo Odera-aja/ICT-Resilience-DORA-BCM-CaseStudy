@@ -87,6 +87,7 @@ Die wertschöpfenden Bereiche sind entlang der Kundenleistung geschnitten:
 | Bereich | Aufgabe | Berichtslinie |
 |---|---|---|
 | **Compliance-Abteilung** | Aufsichtsrechtliche Compliance, Geldwäscheprävention, Kunden-Onboarding und Identifikation (KYC) sowie das regulatorische Meldewesen gegenüber BaFin und ESMA | CRO |
+| **Recht und Datenschutz** | Rechtliche Beratung der Geschäftsbereiche sowie Wahrnehmung der Aufgaben des Datenschutzbeauftragten nach Art. 37 DSGVO. Im Krisenfall Mitglied des Krisenstabs | CRO |
 | **ISMS-Team** | Betrieb des Informationssicherheits-Managementsystems. Besetzung: CISO sowie drei weitere Mitarbeitende | CISO |
 | **BCM-Department** | Business Continuity Management als eigenständiges Department, geleitet vom Crisis Manager. Umfasst zugleich das IT Service Continuity Management (ITSCM). Aufbau und Aufgaben sind in der ICT Business Continuity Policy beschrieben | CRO |
 
