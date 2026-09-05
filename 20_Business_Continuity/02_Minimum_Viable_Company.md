@@ -76,7 +76,7 @@ GermanCrypto Custody AG werden acht Dimensionen betrachtet:
 | **Personalfähigkeit** | Mindestbesetzung mit Vertretungsfähigkeit je kritischer Aufgabe | Abschnitt 3.3 |
 | **Technologie- und Datenzugriff** | Wiederherstellung der MVC-Systeme in definierter Reihenfolge | Abschnitte 3.1 und 3.2 |
 | **Aufsichtsstatus** | Meldepflichten nach DORA Art. 19 und MiCA werden ohne Unterbrechung erfüllt | Compliance-Abteilung, Meldewesen-Systeme |
-| **Entscheidungsbefugnis** | Beschlussfähiges Gremium mit Mandat für Priorisierungsentscheidungen | Krisenstab |
+| **Entscheidungsbefugnis** | Beschlussfähiges Gremium mit Mandat für Priorisierungsentscheidungen und geregelter Zuständigkeit für Zielkonflikte | Krisenstab, siehe `00_ICT_Business_Continuity_Policy.md`, Abschnitt 2.1 |
 
 Zwei dieser Dimensionen sind für einen Kryptoverwahrer besonders kritisch
 und werden häufig unterschätzt: **Aufsichtsstatus**, weil eine verpasste
@@ -104,6 +104,33 @@ nicht neu verhandelt werden muss:
 Ausdrücklich festgehalten: Die Aussetzung dieser Prozesse ist **keine
 Herabstufung ihrer Bedeutung im Normalbetrieb.** Sie ist eine
 Priorisierungsentscheidung für einen eng begrenzten Ausnahmezustand.
+
+### 2.3 Umgang mit Zielkonflikten zur Ausschlussentscheidung
+
+Der in Abschnitt 2.2 festgelegte Ausschlussumfang ist eine Entscheidung, die
+im Normalbetrieb unter bekannten Annahmen getroffen wurde. Im realen
+Ereignis wird sie unter Druck geprüft, und zwar regelmäßig durch die
+Bereiche, deren Prozesse ruhen.
+
+Ein Beispiel: Ab Tag zwei eines Vorfalls steht der ausgesetzte
+Zahlungsverkehr institutionellen Kunden gegenüber, die dringend Mittel
+bewegen wollen. Ein anderes: Die sofortige Wiederherstellung der
+Custody-Ledger-Datenbank steht der forensischen Sicherung gegenüber, die
+für die Meldepflichten nach Art. 33 DSGVO erforderlich sein kann.
+
+**Diese Konflikte lassen sich nicht vollständig vorwegnehmen.** Die
+Ausschlussliste ist deshalb nicht das eigentliche Artefakt, sondern das
+Ergebnis einer Abwägung unter Annahmen, die im Ereignis abweichen werden.
+Was trägt, wenn die Annahmen nicht zutreffen, ist die **vorab geregelte
+Zuständigkeit**: wer im Konfliktfall entscheidet, mit welchem Mandat und
+unter welcher Dokumentationspflicht.
+
+Diese Regelung ist in `00_ICT_Business_Continuity_Policy.md`, Abschnitt
+2.1, festgelegt. Abweichungen vom hier definierten Ausschlussumfang sind
+danach nur durch den Krisenstab und nur mit Protokollierung zulässig. Die
+in Abschnitt 5 definierten Eskalationspunkte sind der vorgesehene
+Regelfall einer solchen Abweichung; sie sind bereits vorentschieden und
+erfordern keine erneute Grundsatzdebatte.
 
 ---
 
@@ -151,7 +178,7 @@ definierter Vertretungsfähigkeit (Bus-Factor-Prinzip):
 | ITSCM-Team | 2 Personen | Mindestens zwei Personen müssen jede kritische Wiederherstellungsaufgabe eigenständig ausführen können |
 | IT-Ops-Bereiche (Betrieb, Firewall, Virtualisierung, Backup) | 2 Personen je Bereich | Sicherstellung technischer Grundfunktionen |
 | Compliance, Meldewesen | 2 Personen | Erfüllung der Meldepflichten unabhängig vom Ausfall Einzelner |
-| Krisenstab | Alle 4 definierten Rollen (Vorstand, PR, IT, Audit) | Funktionsübergreifende Entscheidungsfähigkeit erfordert vollständige Besetzung |
+| Krisenstab | Alle 5 definierten Rollen (Vorstand, PR, IT, Audit, Recht und Datenschutz) | Funktionsübergreifende Entscheidungsfähigkeit erfordert vollständige Besetzung. Ohne die Rolle Recht und Datenschutz bleiben datenschutz- und aufsichtsrechtliche Zielkonflikte im Gremium unvertreten |
 
 ### 3.4 Kritische Drittparteien
 
@@ -201,7 +228,7 @@ und nicht Gegenstand einer Einzelfallentscheidung im Ereignis.
 
 | Phase | Inhalt | Zielzeitpunkt | Begründung |
 |---|---|---|---|
-| **0** | Aktivierung des Krisenstabs, Herstellung gesicherter Ausweichkommunikation, Zugriff auf die Notfalldokumentation | unmittelbar | Ohne Entscheidungsgremium und Kommunikationsweg ist jede weitere Maßnahme unkoordiniert |
+| **0** | Aktivierung des Krisenstabs in vollständiger Besetzung, Herstellung gesicherter Ausweichkommunikation, Zugriff auf die Notfalldokumentation | unmittelbar | Ohne Entscheidungsgremium und Kommunikationsweg ist jede weitere Maßnahme unkoordiniert |
 | **1** | Wiederherstellung der Control Plane: Active Directory, IAM, Secure Gateways | 45 min | Ohne interne Identitäten kann keine Wiederherstellung autorisiert und durchgeführt werden |
 | **2** | Meldewesen-Dokumentations-Datenbank, Aufnahme der Meldetätigkeit gegenüber BaFin | 45 min | Meldefristen laufen unabhängig vom technischen Zustand weiter |
 | **3** | Hardware Security Module, Custody-Ledger-Datenbank | 1 h | Wiederherstellung der Verwahr- und Signaturfähigkeit |
@@ -335,4 +362,5 @@ Fallunternehmen.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
+| 2.1 | 05.09.2026 | CRO | Umgang mit Zielkonflikten zur Ausschlussentscheidung ergänzt, Krisenstab-Mindestbesetzung auf fünf Rollen angehoben |
 | 2.0 | 02.09.2026 | CRO | Normative Einordnung (MBCO), Viabilitätsdimensionen, expliziter Ausschlussumfang, Schichtung der Systeme, Wiederanlaufsequenz, Betriebsdauer und Eskalationspunkte, Notfalldokumentation, Clean-Room-Prinzip, Quellenverzeichnis |
