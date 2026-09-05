@@ -52,7 +52,7 @@ Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IE
     03_Wiederanlaufstrategien.md               🔜 ISO 22301 Kap. 8.3
     04_Wiederanlaufplaene.md                   🔜 ISO 22301 Kap. 8.4
     05_Backup_und_redundante_Kapazitaeten.md   🔜 DORA Art. 12
-    06_Krisenkommunikation.md                  🔜 DORA Art. 11 Abs. 2, CEN/TS 17091
+    06_Krisenkommunikation.md                  🔜 DORA Art. 11 Abs. 2, ISO 22361
     07_Testing_und_Uebungszyklus.md            🔜 ISO 22301 Kap. 8.5
     08_Review_und_Verbesserung.md              🔜 ISO 22301 Kap. 9 und 10
 
@@ -87,7 +87,7 @@ Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der 
 | **ISO/IEC 27001:2022** | Managementsystem-Struktur. Kap. 4.3 (Geltungsbereich), Kap. 5.3 (Rollen und Verantwortlichkeiten) |
 | **ISO/IEC 22301:2019** | BCM-Methodik. Führende BCM-Methodik. Kap. 4.3 (Geltungsbereich BCMS), Kap. 8.2 (Risikobeurteilung und BIA), Kap. 8.3 (Strategien), Kap. 8.4 (Pläne), Kap. 8.5 (Übungen), Kap. 9 und 10 (Bewertung und Verbesserung) |
 | **BSI-Standard 200-4** | Deutsche BCM-Methodik als ergänzende nationale Referenz |
-| **CEN/TS 17091** | Europäische Spezifikation für Krisenmanagement. Grundlage des geplanten Kapitels zur Krisenkommunikation |
+| **EN ISO 22361:2022** | Leitlinien für Krisenmanagement. Grundlage des geplanten Kapitels zur Krisenkommunikation. Ersetzt seit Oktober 2022 die zurückgezogene CEN/TS 17091 |
 | **KWG / MiCA** | Bestimmen den aufsichtsrechtlichen Status des Fallunternehmens |
 
 **Zum Verhältnis von ISO 27001 und DORA:** ISO/IEC 27001 ist ein freiwilliger, zertifizierbarer Managementsystem-Standard und liefert die Organisationsmaschinerie. DORA ist eine verpflichtende Verordnung und definiert die zu erreichenden Ergebnisse, ohne eine Organisationsform vorzugeben. Das ISMS ist damit das Vehikel, die DORA-Anforderungen sind das Ziel. Wie sich der bewusst eng gefasste ISO-Geltungsbereich zum weiten DORA-Anwendungsbereich verhält, ist im Geltungsbereichs-Dokument, Abschnitt 8, ausgeführt.
