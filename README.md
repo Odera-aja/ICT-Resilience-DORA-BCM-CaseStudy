@@ -48,7 +48,7 @@ Die Ablage folgt **Fachdisziplinen, nicht Regelwerken.** Der Grund: DORA, ISO/IE
 20_Business_Continuity/                        Säule 1, Schwerpunkt dieses Projekts
     00_ICT_Business_Continuity_Policy.md       ✅ Rahmenwerk, Governance, Rollen
     01_Business_Impact_Analysis.md             ✅ Prozesslandschaft, Kritikalität, System-RTOs
-    02_Minimum_Viable_Company.md               ✅ Ausschlussumfang, Schichtung, Sequenz, Betriebsdauer
+    02_Minimum_Viable_Company.md               ✅ Ausschluss, Schichtung, Sequenz, Betriebsdauer, Workarounds
     03_Wiederanlaufstrategien.md               🔜 ISO 22301 Kap. 8.3
     04_Wiederanlaufplaene.md                   🔜 ISO 22301 Kap. 8.4
     05_Backup_und_redundante_Kapazitaeten.md   🔜 DORA Art. 12
@@ -101,6 +101,10 @@ Ordner ohne veröffentlichte Dokumente existieren im Repository noch nicht. Der 
 **Strikte Trennung interner und externer Identitäten.** Mitarbeiteridentitäten (Active Directory, IAM) und Kundenidentitäten (CIAM) werden getrennt geführt, damit eine Kompromittierung der öffentlich erreichbaren Kundenlogin-Fläche keinen Pfad zu internen Konten eröffnet.
 
 **Enger ISO-Scope, weiter DORA-Anwendungsbereich.** Der Geltungsbereich der Managementsysteme schließt Randsysteme bewusst aus. DORA kennt kein Scoping-Konzept, sondern den Verhältnismäßigkeitsgrundsatz. Beide Rahmen widersprechen sich daher nicht, sondern greifen ineinander.
+
+**Angebotsseite und Nachfrageseite der MVC.** Wie lange ein Unternehmen den Minimalbetrieb **aushält**, und wie lange es ihn **braucht**, sind zwei verschiedene Größen. Die Differenz zwischen beiden ist das eigentliche Resilienzrisiko, und sie lässt sich durch keinen Wiederanlaufplan schließen. Daraus folgt auch ein Aufnahmekriterium: Die **Abwesenheit eines manuellen Ersatzverfahrens** ist das schärfste Argument dafür, dass ein Prozess in die MVC gehört.
+
+**Fortbestand und Wiederanlauf sind zwei Fragen.** Was aufrechterhalten wird, setzt voraus, dass überhaupt etwas übrig ist. Im Totalverlust-Szenario greift nur noch die Frage nach der Wiederanlaufreihenfolge. Und die dort hinterlegten System-RTOs laufen erst ab dem Zeitpunkt, an dem wieder eine tragfähige Plattform existiert.
 
 **Die MVC als Ausschluss-Entscheidung.** Das Kapitel legt nicht nur fest, welche Systeme überleben müssen, sondern welche Prozesse im Krisenfall bewusst ruhen, in welcher Reihenfolge wiederangelaufen wird und wie lange der MVC-Zustand tragfähig ist. Der begrenzende Faktor ist dabei nicht die Technik, sondern das Kundenvertrauen.
 
