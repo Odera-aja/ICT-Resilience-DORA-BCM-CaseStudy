@@ -60,6 +60,36 @@ sind damit zugleich die Konkretisierung des MBCO für dieses Institut.
 
 ---
 
+### 1.3 Zwei Fragen, nicht eine
+
+Die MVC beantwortet zwei Fragen, die in der Praxis regelmäßig vermischt
+werden:
+
+**Erstens: Welcher Teil des Unternehmens muss fortbestehen?** Also welche
+Systeme, Personen und Leistungen während der Störung durchgehend verfügbar
+bleiben.
+
+**Zweitens: Was muss nach einem Ausfall zuerst wieder hergestellt werden?**
+Also in welcher Reihenfolge der Wiederanlauf erfolgt, um den überlebensfähigen
+Zustand zurückzugewinnen.
+
+Die Unterscheidung ist nicht akademisch. **Die erste Frage setzt voraus, dass
+Fortbestand überhaupt möglich ist, und das ist nicht immer der Fall.** Bei
+einem flächendeckenden Verschlüsselungsangriff kann kein System mehr als
+vertrauenswürdig gelten; es gibt dann nichts, was aufrechterhalten wird.
+In diesem Fall greift ausschließlich die zweite Frage.
+
+Dieses Dokument behandelt daher beide Fälle getrennt:
+
+| Fall | Leitfrage | Behandelt in |
+|---|---|---|
+| **Störung mit erhaltener Substanz** | Was wird aufrechterhalten? | Abschnitt 3 (Bestandteile) |
+| **Totalverlust** | Was kommt in welcher Reihenfolge zurück? | Abschnitt 4 (Wiederanlaufsequenz) |
+
+Die Bestandteile in Abschnitt 3 sind in beiden Fällen dieselben. Was sich
+unterscheidet, ist ihr Zustand zu Beginn: einmal vorhanden und zu schützen,
+einmal verloren und neu aufzubauen.
+
 ## 2. Abgrenzung des MVC-Umfangs
 
 ### 2.1 Dimensionen der Überlebensfähigkeit
@@ -225,6 +255,35 @@ RTOs legen Zielzeiten fest, aber keine Reihenfolge. Bei mehreren Systemen
 mit identischem RTO bestimmt erst die Sequenz, was tatsächlich zuerst
 bearbeitet wird. Die Reihenfolge ist damit Bestandteil der MVC-Definition
 und nicht Gegenstand einer Einzelfallentscheidung im Ereignis.
+
+### 4.1 Voraussetzung: Wiederherstellung der Basis-Infrastruktur
+
+Die in der Business Impact Analysis abgeleiteten System-RTOs von 45 Minuten
+bis einer Stunde setzen voraus, dass eine tragfähige **Plattform** existiert,
+auf der wiederhergestellt werden kann: Netzwerk, Virtualisierung, Storage und
+ein vertrauenswürdiger Verzeichnisdienst.
+
+Im Störungsfall mit erhaltener Substanz ist diese Voraussetzung gegeben, und
+die Sequenz in Abschnitt 4.2 beginnt unmittelbar.
+
+**Im Totalverlust-Szenario gilt sie nicht.** Dort ist die Wiederherstellung
+der Basis-Infrastruktur ein eigener, vorgelagerter Schritt, und erst ab
+seinem Abschluss laufen die System-RTOs überhaupt an. Diese Unterscheidung
+ist wesentlich: Ein RTO von 45 Minuten bedeutet nicht, dass das System 45
+Minuten nach dem Ereignis verfügbar ist, sondern 45 Minuten nachdem eine
+Plattform bereitsteht.
+
+**Zielwert für die GermanCrypto Custody AG: 24 Stunden.** In der Praxis
+setzen große Unternehmen für die Wiederherstellung der Basis-Infrastruktur
+nach einem globalen Ausfall Zielwerte im Bereich von etwa 48 Stunden an, also
+bis zu dem Punkt, an dem Applikationen darauf wiederhergestellt werden
+können. Für Institute des Finanzsektors liegen diese Werte regelmäßig
+darunter, weil Melde- und Abwicklungspflichten unabhängig vom technischen
+Zustand weiterlaufen. Der hier angesetzte Wert von 24 Stunden folgt dieser
+Logik und ist zugleich der Punkt, ab dem der in Abschnitt 5 hergeleitete
+Vertrauenshorizont bereits zur Hälfte verbraucht ist.
+
+### 4.2 Sequenz nach Verfügbarkeit der Plattform
 
 | Phase | Inhalt | Zielzeitpunkt | Begründung |
 |---|---|---|---|
