@@ -309,6 +309,20 @@ dieser Zustand tragfähig ist, wird in der verfügbaren Fachliteratur zu MVC
 bislang nicht behandelt. Für dieses Institut wird die Frage deshalb
 eigenständig beantwortet.
 
+Dabei sind **zwei Größen zu unterscheiden, die regelmäßig verwechselt
+werden:**
+
+| | Frage | Bestimmt durch |
+|---|---|---|
+| **Angebotsseite** | Wie lange **kann** das Institut den MVC-Zustand aushalten? | Vertrauen, Personal, Finanzen, Aufsicht |
+| **Nachfrageseite** | Wie lange **muss** es ihn aushalten? | Dauer bis zur Wiederherstellung des Normalbetriebs oder bis wirksame Workarounds greifen |
+
+**Die Differenz zwischen beiden ist das eigentliche Resilienzrisiko.** Sie
+lässt sich durch keinen Wiederanlaufplan schließen, sondern nur dadurch, dass
+man entweder die Angebotsseite verlängert oder die Nachfrageseite verkürzt.
+
+### 5.1 Angebotsseite: wie lange der Zustand tragfähig ist
+
 Die zulässige Betriebsdauer ergibt sich aus dem **kürzesten** der folgenden
 vier Belastungshorizonte. Die Bewertung folgt damit demselben
 Worst-Case-Prinzip wie die Kritikalitätseinstufung in der Business Impact
@@ -318,29 +332,47 @@ Analysis:
 |---|---|---|
 | **Kundenvertrauen** | **3 Tage** | Kunden können weder auf Bestandsinformationen zugreifen noch Auszahlungen veranlassen. In der Kryptobranche verbreiten sich Zweifel an der Zahlungs- und Auskunftsfähigkeit eines Verwahrers besonders schnell. Ab etwa drei Tagen ist mit Abzugsverhalten in erheblichem Umfang zu rechnen. |
 | **Personelle Belastbarkeit** | 5 bis 7 Tage | Die Mindestbesetzung von zwei Personen je kritischem Bereich lässt nur eingeschränkten Schichtbetrieb zu. Ab etwa fünf Tagen steigt die Fehlerwahrscheinlichkeit deutlich, ab sieben Tagen ist die Besetzung nicht mehr belastbar aufrechtzuerhalten. |
-| **Finanzielle Tragfähigkeit** | mehrere Wochen | Transaktionsentgelte entfallen, laufende Verbindlichkeiten bestehen fort. Der Zeitraum ist deutlich länger als die übrigen Faktoren und daher nicht bestimmend. |
-| **Aufsichtsrechtliche Duldung** | fortlaufend zu bewerten | Kein fester Horizont. Solange Meldepflichten erfüllt und die Aufsicht laufend informiert wird, besteht kein automatischer Endpunkt. Bei ausbleibender Rückkehr in den Normalbetrieb ist mit aufsichtlichen Maßnahmen zu rechnen. |
+| **Finanzielle Tragfähigkeit** | mehrere Wochen | Transaktionsentgelte entfallen, laufende Verbindlichkeiten bestehen fort. Nicht bestimmend. |
+| **Aufsichtsrechtliche Duldung** | fortlaufend zu bewerten | Kein fester Horizont, solange Meldepflichten erfüllt und die Aufsicht laufend informiert wird. Bei ausbleibender Rückkehr in den Normalbetrieb ist mit aufsichtlichen Maßnahmen zu rechnen. |
 
 **Maßgeblich ist damit der Horizont von drei Tagen.** Er ist zugleich der
-einzige Faktor, der sich nicht durch technische Maßnahmen verlängern lässt,
-sondern ausschließlich durch Kommunikation.
+einzige Faktor, der sich nicht durch technische Maßnahmen verlängern lässt.
 
-**Daraus abgeleitete Eskalationspunkte:**
+### 5.2 Workarounds als Verlängerung der Angebotsseite
+
+Ein Prozess, der sich vorübergehend manuell oder in reduzierter Form
+erbringen lässt, belastet den MVC-Zustand weniger. Wirksame Ersatzverfahren
+verlängern damit die tragfähige Dauer, ohne dass ein einziges System
+wiederhergestellt wird.
+
+| Bereich | Ersatzverfahren | Wirkung |
+|---|---|---|
+| Kundeninformation | Vorbereitete Statusseite außerhalb der eigenen Infrastruktur, Versand über einen externen Dienst | Verlängert den Vertrauenshorizont, weil Sprachlosigkeit und nicht der Ausfall selbst das Vertrauen zerstört |
+| Regulatorisches Meldewesen | Manuelle, revisionssichere Erfassung meldepflichtiger Ereignisse zur späteren Nachmeldung | Sichert die Meldefähigkeit dem Inhalt nach, auch wenn das System nicht verfügbar ist |
+| Interne Koordination | Ausweichkommunikation und Kontaktlisten aus der Notfalldokumentation (Abschnitt 3.5) | Erhält die Handlungsfähigkeit des Krisenstabs |
+| **Verwahrung digitaler Vermögenswerte** | **kein Ersatzverfahren möglich** | Signaturfähigkeit setzt funktionsfähige HSM voraus. Manuell nicht substituierbar |
+
+🔑 **Daraus folgt ein Aufnahmekriterium für die MVC selbst:** Ein Prozess, der
+sich über einen tragfähigen Zeitraum manuell ersetzen lässt, gehört nicht
+zwingend in die MVC. **Die Abwesenheit eines Ersatzverfahrens ist das
+schärfste Argument für die Aufnahme.** Genau deshalb ist die Verwahrung der
+unverzichtbarste Bestandteil dieser MVC, obwohl sie nicht den kürzesten RTO hat.
+
+### 5.3 Abgeleitete Eskalationspunkte
 
 | Zeitpunkt | Auslöser | Maßnahme |
 |---|---|---|
 | ab Stunde 4 | MVC-Zustand hält an | Erste aktive Kundeninformation über den Krisenstab, unabhängig davon, ob neue Erkenntnisse vorliegen |
+| ab Stunde 24 | Basis-Infrastruktur nicht wiederhergestellt (Zielwert Abschnitt 4.1) | Eskalation an den Vorstand, Prüfung externer Unterstützung, Aktivierung der Ersatzverfahren nach Abschnitt 5.2 |
 | ab Tag 2 | MVC-Zustand hält an | Verstärkung der Mindestbesetzung, Aktivierung zusätzlicher Vertretungen |
 | ab Tag 3 | Vertrauenshorizont erreicht | Entscheidung des Vorstands über vorgezogene Teilwiederherstellung des Kundenzugriffs, auch mit eingeschränktem Funktionsumfang |
 | ab Tag 5 | Personelle Belastungsgrenze | Entscheidung über externe Unterstützung oder kontrollierte Reduktion des Leistungsumfangs |
 
 Der Kundenzugriff ist damit zwar nach Abschnitt 2.2 nicht Teil der MVC,
 erhält über die Eskalationslogik aber einen definierten Zeitpunkt, ab dem
-seine Wiederherstellung erzwungen wird. Genau an dieser Stelle wird
-sichtbar, dass eine MVC ohne Zeitbetrachtung unvollständig bleibt: Ein
-Ausschluss, der unbefristet gilt, ist in der Praxis nicht haltbar.
-
----
+seine Wiederherstellung erzwungen wird. Genau an dieser Stelle wird sichtbar,
+dass eine MVC ohne Zeitbetrachtung unvollständig bleibt: **Ein Ausschluss,
+der unbefristet gilt, ist in der Praxis nicht haltbar.**
 
 ## 6. Weg in den MVC-Zustand: Clean-Room-Prinzip
 
@@ -405,14 +437,26 @@ zugleich der Positionierung eigener Produkte dient.
 - Semperis: *Minimum Viable Company: Cyber Resilience Beyond the Breach*, Herkunft des Arguments, dass die Identitätswiederherstellung dem Wiederanlauf der Geschäftssysteme vorausgehen muss
   https://www.semperis.com/blog/minimum-viable-company-cyber-resilience-beyond-the-breach/
 
+**Fachlicher Austausch**
+
+Die Trennung von Fortbestand und Wiederanlauf (Abschnitt 1.3), die
+vorgelagerte Wiederherstellung der Basis-Infrastruktur (Abschnitt 4.1) sowie
+die Rolle von Workarounds (Abschnitt 5.2) gehen auf Rückmeldungen aus
+Gesprächen mit Praktikern aus der Resilienzberatung zurück. Diese
+Rückmeldungen werden hier nicht zitiert, sondern als Gestaltungsentscheidung
+für dieses Fallunternehmen verarbeitet.
+
 **Eigenständiger Beitrag dieses Dokuments**
 
-Abschnitt 5 (Betriebsdauer im MVC-Zustand) ist nicht aus den genannten
-Quellen abgeleitet. Keine der ausgewerteten Veröffentlichungen behandelt
-die Frage, wie lange ein MVC-Zustand tragfähig ist. Die dort dargestellte
-Herleitung über konkurrierende Belastungshorizonte und die daraus
-abgeleiteten Eskalationspunkte sind eine eigene Ausarbeitung für dieses
-Fallunternehmen.
+Abschnitt 5 ist nicht aus den genannten Quellen abgeleitet. Keine der
+ausgewerteten Veröffentlichungen behandelt die Frage, wie lange ein
+MVC-Zustand tragfähig ist. Insbesondere die Unterscheidung zwischen der
+**Angebotsseite** (wie lange ein Unternehmen den Zustand aushält) und der
+**Nachfrageseite** (wie lange es ihn braucht) sowie die These, dass die
+Differenz beider das eigentliche Resilienzrisiko darstellt, sind eine eigene
+Ausarbeitung für dieses Fallunternehmen. Gleiches gilt für das Kriterium,
+dass die Abwesenheit eines Ersatzverfahrens das schärfste Argument für die
+Aufnahme in die MVC ist.
 
 ---
 
@@ -421,5 +465,6 @@ Fallunternehmen.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
+| 3.0 | 09.09.2026 | CRO | Trennung von Fortbestand und Wiederanlauf, vorgelagerte Wiederherstellung der Basis-Infrastruktur mit Zielwert, Betriebsdauer nach Angebots- und Nachfrageseite gegliedert, Workarounds und daraus abgeleitetes Aufnahmekriterium ergänzt |
 | 2.1 | 05.09.2026 | CRO | Umgang mit Zielkonflikten zur Ausschlussentscheidung ergänzt, Krisenstab-Mindestbesetzung auf fünf Rollen angehoben |
 | 2.0 | 02.09.2026 | CRO | Normative Einordnung (MBCO), Viabilitätsdimensionen, expliziter Ausschlussumfang, Schichtung der Systeme, Wiederanlaufsequenz, Betriebsdauer und Eskalationspunkte, Notfalldokumentation, Clean-Room-Prinzip, Quellenverzeichnis |
