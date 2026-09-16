@@ -172,19 +172,35 @@ Wiederanlaufreihenfolge in Abschnitt 4. Systeme der Schicht 0 ermöglichen
 Wiederherstellung überhaupt erst und müssen deshalb vor allen
 geschäftskritischen Systemen verfügbar sein.
 
-### 3.1 Schicht 0: Control Plane
+### 3.1 Schicht 0: Grundlage der Wiederherstellung
 
-| System | Abgeleiteter RTO | Funktion im Wiederanlauf |
+Schicht 0 umfasst alles, was gebraucht wird, um überhaupt wiederherstellen zu
+können. Ohne sie lässt sich kein geschäftskritisches System zurückholen, weil
+es weder eine Plattform gibt, auf der es laufen kann, noch eine Identität, mit
+der jemand die Wiederherstellung autorisiert.
+
+| System | Funktion im Wiederanlauf | Zielzeit |
 |---|---|---|
-| Active Directory (interne Mitarbeiteridentitäten) | 45 min | Ohne interne Identitäten kann kein Wiederherstellungsschritt autorisiert werden |
-| IAM (interne Rechtevergabe) | 45 min | Vergabe privilegierter Zugriffe für Wiederherstellungstätigkeiten |
-| Secure Gateways | 45 min | Gesicherter Zugang der Wiederherstellungsteams zu den Zielsystemen |
-| CIAM (Kundenauthentifizierung) | 1 h | Identitätssystem, wird aber für den Wiederanlauf selbst nicht benötigt und daher innerhalb der Schicht zuletzt wiederhergestellt |
+| Netzwerk und DNS | Ohne Namensauflösung und Erreichbarkeit findet kein System ein anderes | siehe unten |
+| Virtualisierung und Storage | Die Plattform, auf der alle übrigen Systeme laufen | siehe unten |
+| Active Directory | Ohne interne Identitäten kann kein Wiederherstellungsschritt autorisiert werden | 45 min |
+| IAM | Vergabe privilegierter Zugriffe für die Wiederherstellungstätigkeiten | 45 min |
+| Secure Gateways | Gesicherter Zugang der Wiederherstellungsteams zu den Zielsystemen | 45 min |
+| CIAM | Kundenauthentifizierung. Gehört zur Schicht, wird aber für den Wiederanlauf selbst nicht gebraucht und daher zuletzt wiederhergestellt | 1 h |
 
-Die Trennung interner und externer Identitäten (`01_Business_Impact_Analysis.md`, Abschnitt 5.2) wirkt sich hier unmittelbar aus: Weil CIAM architektonisch
-von Active Directory getrennt ist, kann die interne Wiederherstellung
-beginnen, ohne dass die öffentlich erreichbare Kundenlogin-Fläche
-verfügbar oder vertrauenswürdig sein muss.
+**Warum Netzwerk, Virtualisierung und Storage mit aufgeführt sind, obwohl sie
+keine eigene Zeitvorgabe aus der Business Impact Analysis tragen:** Die dort
+abgeleiteten Zeiten von 45 Minuten und einer Stunde gelten für den
+Störungsfall, in dem diese Grundlage noch vorhanden ist. Im Totalverlust ist
+sie es nicht, und dann muss sie zuerst neu entstehen. Wie lange das dauern
+darf, steht in Abschnitt 4.1.
+
+**Zur Trennung von Active Directory und CIAM:** Interne
+Mitarbeiteridentitäten und externe Kundenidentitäten werden getrennt geführt
+(siehe `01_Business_Impact_Analysis.md`, Abschnitt 5.2). Das wirkt sich hier
+unmittelbar aus: Die interne Wiederherstellung kann beginnen, ohne dass die
+öffentlich erreichbare Kundenlogin-Fläche verfügbar oder vertrauenswürdig
+sein muss.
 
 ### 3.2 Schicht 1: Geschäftskritische Systeme
 
@@ -256,32 +272,29 @@ mit identischem RTO bestimmt erst die Sequenz, was tatsächlich zuerst
 bearbeitet wird. Die Reihenfolge ist damit Bestandteil der MVC-Definition
 und nicht Gegenstand einer Einzelfallentscheidung im Ereignis.
 
-### 4.1 Voraussetzung: Wiederherstellung der Basis-Infrastruktur
+### 4.1 Voraussetzung: Schicht 0 muss zuerst stehen
 
-Die in der Business Impact Analysis abgeleiteten System-RTOs von 45 Minuten
-bis einer Stunde setzen voraus, dass eine tragfähige **Plattform** existiert,
-auf der wiederhergestellt werden kann: Netzwerk, Virtualisierung, Storage und
-ein vertrauenswürdiger Verzeichnisdienst.
+Die in der Business Impact Analysis abgeleiteten Zeiten von 45 Minuten bis
+einer Stunde setzen voraus, dass Netzwerk, Virtualisierung und Storage
+funktionieren. Im Störungsfall ist das gegeben, und die Sequenz in Abschnitt
+4.2 beginnt sofort.
 
-Im Störungsfall mit erhaltener Substanz ist diese Voraussetzung gegeben, und
-die Sequenz in Abschnitt 4.2 beginnt unmittelbar.
+**Im Totalverlust gilt das nicht.** Dort muss Schicht 0 erst wieder entstehen,
+und erst ab diesem Moment laufen die Zeitvorgaben der Schicht 1 überhaupt an.
 
-**Im Totalverlust-Szenario gilt sie nicht.** Dort ist die Wiederherstellung
-der Basis-Infrastruktur ein eigener, vorgelagerter Schritt, und erst ab
-seinem Abschluss laufen die System-RTOs überhaupt an. Diese Unterscheidung
-ist wesentlich: Ein RTO von 45 Minuten bedeutet nicht, dass das System 45
-Minuten nach dem Ereignis verfügbar ist, sondern 45 Minuten nachdem eine
-Plattform bereitsteht.
+> Ein RTO von 45 Minuten bedeutet nicht, dass das System 45 Minuten nach dem
+> Ereignis verfügbar ist. Es bedeutet 45 Minuten, nachdem es wieder etwas
+> gibt, worauf es laufen kann.
 
-**Zielwert für die GermanCrypto Custody AG: 24 Stunden.** In der Praxis
-setzen große Unternehmen für die Wiederherstellung der Basis-Infrastruktur
-nach einem globalen Ausfall Zielwerte im Bereich von etwa 48 Stunden an, also
-bis zu dem Punkt, an dem Applikationen darauf wiederhergestellt werden
-können. Für Institute des Finanzsektors liegen diese Werte regelmäßig
-darunter, weil Melde- und Abwicklungspflichten unabhängig vom technischen
-Zustand weiterlaufen. Der hier angesetzte Wert von 24 Stunden folgt dieser
-Logik und ist zugleich der Punkt, ab dem der in Abschnitt 5 hergeleitete
-Vertrauenshorizont bereits zur Hälfte verbraucht ist.
+**Zielwert für die GermanCrypto Custody AG: 24 Stunden.** In der Praxis setzen
+große Unternehmen für die Wiederherstellung ihrer Grundinfrastruktur nach
+einem flächendeckenden Ausfall Werte im Bereich von etwa 48 Stunden an, also
+bis zu dem Punkt, an dem Anwendungen darauf wieder aufgesetzt werden können.
+Für Institute des Finanzsektors liegen diese Werte niedriger, weil Melde- und
+Abwicklungspflichten unabhängig vom technischen Zustand weiterlaufen. Die hier
+angesetzten 24 Stunden folgen dieser Logik. Sie sind zugleich der Punkt, an
+dem die Hälfte der in Abschnitt 5 hergeleiteten Belastbarkeit bereits
+verbraucht ist.
 
 ### 4.2 Sequenz nach Verfügbarkeit der Plattform
 
