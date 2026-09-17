@@ -315,26 +315,29 @@ nachholbar und erzeugt einen zusätzlichen, eigenständigen Schaden.
 
 ---
 
-## 5. Betriebsdauer im MVC-Zustand
+## 5. Wie lange der MVC-Zustand tragfähig ist
 
-Die MVC beschreibt einen Ausnahmezustand, keinen Dauerzustand. Wie lange
-dieser Zustand tragfähig ist, wird in der verfügbaren Fachliteratur zu MVC
-bislang nicht behandelt. Für dieses Institut wird die Frage deshalb
+Der MVC-Zustand ist ein Ausnahmezustand, kein Dauerzustand. Zwei Fragen
+entscheiden darüber, ob er funktioniert, und sie werden regelmäßig
+verwechselt:
+
+**Wie lange hält das Institut ihn aus?** Irgendwann bricht etwas, das nichts
+mit der IT zu tun hat. Kunden verlieren das Vertrauen, die Mindestbesetzung
+ist erschöpft, die fehlenden Erträge werden spürbar.
+
+**Wie lange braucht es ihn?** So lange, bis der Normalbetrieb wieder läuft
+oder bis Ersatzverfahren so weit greifen, dass es kein Notbetrieb mehr ist.
+
+**Ist die zweite Zeit länger als die erste, entsteht eine Lücke, die kein
+Wiederanlaufplan schließt.** Sie lässt sich nur von zwei Seiten angehen:
+entweder das Institut hält länger durch, oder die Wiederherstellung wird
+schneller.
+
+Wie lange ein MVC-Zustand tragfähig ist, wird in der verfügbaren
+Fachliteratur nicht behandelt. Für dieses Institut wird die Frage deshalb
 eigenständig beantwortet.
 
-Dabei sind **zwei Größen zu unterscheiden, die regelmäßig verwechselt
-werden:**
-
-| | Frage | Bestimmt durch |
-|---|---|---|
-| **Angebotsseite** | Wie lange **kann** das Institut den MVC-Zustand aushalten? | Vertrauen, Personal, Finanzen, Aufsicht |
-| **Nachfrageseite** | Wie lange **muss** es ihn aushalten? | Dauer bis zur Wiederherstellung des Normalbetriebs oder bis wirksame Workarounds greifen |
-
-**Die Differenz zwischen beiden ist das eigentliche Resilienzrisiko.** Sie
-lässt sich durch keinen Wiederanlaufplan schließen, sondern nur dadurch, dass
-man entweder die Angebotsseite verlängert oder die Nachfrageseite verkürzt.
-
-### 5.1 Angebotsseite: wie lange der Zustand tragfähig ist
+### 5.1 Wie lange das Institut durchhält
 
 Die zulässige Betriebsdauer ergibt sich aus dem **kürzesten** der folgenden
 vier Belastungshorizonte. Die Bewertung folgt damit demselben
@@ -351,7 +354,7 @@ Analysis:
 **Maßgeblich ist damit der Horizont von drei Tagen.** Er ist zugleich der
 einzige Faktor, der sich nicht durch technische Maßnahmen verlängern lässt.
 
-### 5.2 Workarounds als Verlängerung der Angebotsseite
+### 5.2 Ersatzverfahren verlängern die Durchhaltezeit
 
 Ein Prozess, der sich vorübergehend manuell oder in reduzierter Form
 erbringen lässt, belastet den MVC-Zustand weniger. Wirksame Ersatzverfahren
@@ -387,32 +390,55 @@ seine Wiederherstellung erzwungen wird. Genau an dieser Stelle wird sichtbar,
 dass eine MVC ohne Zeitbetrachtung unvollständig bleibt: **Ein Ausschluss,
 der unbefristet gilt, ist in der Praxis nicht haltbar.**
 
-## 6. Weg in den MVC-Zustand: Clean-Room-Prinzip
+## 6. Der Weg zurück: das Clean-Room-Prinzip
 
-Bei einem Cyberangriff kann nicht vorausgesetzt werden, dass vorhandene
+Bei einem Cyberangriff kann nicht vorausgesetzt werden, dass die vorhandenen
 Sicherungen frei von Schadcode sind. Eine Wiederherstellung direkt in die
-Produktionsumgebung birgt daher das Risiko, die Ursache der Störung erneut
+Produktion würde daher das Risiko tragen, die Ursache der Störung erneut
 einzuspielen.
 
-Der Wiederanlauf der MVC-Systeme erfolgt deshalb nach folgendem Grundsatz:
+### 6.1 Zwei Dinge, die nicht verwechselt werden dürfen
 
-1. Wiederherstellung eines Sicherungsstandes in einer **isolierten
-   Umgebung ohne Netzwerkverbindung zur Produktion**
-2. Prüfung auf Schadcode und Validierung der Datenintegrität in dieser
-   Umgebung
-3. Freigabe durch den Krisenstab
-4. Erst danach Überführung in die Produktion
+**Die Umgebung selbst** besteht aus Rechenleistung, Speicher und einem
+abgetrennten Netzsegment. Sie wird nicht wiederhergestellt, sondern
+vorgehalten oder kurzfristig beschafft. Das ist eine Vorbereitungsaufgabe im
+Normalbetrieb, keine Aufgabe im Ereignis.
 
-Dieses Vorgehen verlängert den Wiederanlauf und ist bei der Bemessung der
-RTOs zu berücksichtigen. Es ist gleichwohl nicht verzichtbar: Bei einem
-Verwahrer digitaler Vermögenswerte würde eine Wiederherstellung
-kompromittierter Systeme mit Zugriff auf die Signaturfähigkeit einen
-irreversiblen Schaden ermöglichen.
+**Der Inhalt der Schicht 0**, also Verzeichnisdienst, Namensauflösung,
+Berechtigungen und Gateway-Konfiguration, wird aus unveränderlichen
+Sicherungen in diese Umgebung eingespielt, dort auf Schadcode geprüft und
+erst nach Freigabe in Betrieb genommen.
 
-Die konkrete technische Ausgestaltung wird in
-`03_Wiederanlaufstrategien.md` beschrieben (in Arbeit).
+Die 24 Stunden aus Abschnitt 4.1 umfassen genau diesen Weg: von der
+verfügbaren leeren Umgebung bis zur geprüften, lauffähigen Schicht 0.
 
----
+### 6.2 Ablauf
+
+1. Bereitstellung der isolierten Umgebung ohne Verbindung zur Produktion
+2. Einspielen der Schicht-0-Sicherungen
+3. Prüfung auf Schadcode und Validierung der Datenintegrität
+4. Freigabe durch den Krisenstab
+5. Erst danach Schicht 1 und schrittweise Überführung in den Betrieb
+
+### 6.3 Warum das zweite Rechenzentrum dafür nicht ausreicht
+
+FDC1 und FDC2 werden im Active-Passive-Betrieb geführt, für Transaktions- und
+Custody-Daten mit **synchroner Replikation**. Diese Auslegung ist für
+Ausfälle von Hardware, Strom oder Standort richtig und wirksam.
+
+**Gegen einen Verschlüsselungsangriff schützt sie nicht.** Was auf FDC1
+geschrieben wird, steht Sekunden später auf FDC2, und das gilt für
+verschlüsselte Daten genauso wie für gültige. Der zweite Standort ist damit
+eine Absicherung gegen Ausfall, aber keine gegen Kompromittierung.
+
+Daraus folgt eine eigene Anforderung an die Vorbereitung: Die isolierte
+Umgebung nach Abschnitt 6.1 darf **weder an FDC1 noch an FDC2 angebunden
+sein**. Zusätzlich müssen die Sicherungen der Schicht 0 unveränderlich
+vorgehalten werden, damit sie von einem Angreifer mit Zugriff auf die
+Produktionsumgebung nicht verändert werden können.
+
+Die technische Ausgestaltung wird in `03_Wiederanlaufstrategien.md`
+beschrieben (in Arbeit).
 
 ## 7. Quellen und Einordnung
 
@@ -478,6 +504,7 @@ Aufnahme in die MVC ist.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 31.07.2026 | CRO | Initiale Freigabe |
+| 3.1 | 17.09.2026 | CRO | Schicht 0 um Netzwerk, DNS, Virtualisierung und Storage vervollständigt. Abschnitt 5 sprachlich vereinfacht. Clean Room um die Abgrenzung von Umgebung und Inhalt sowie um die Grenze der synchronen Replikation zwischen FDC1 und FDC2 erweitert |
 | 3.0 | 09.09.2026 | CRO | Trennung von Fortbestand und Wiederanlauf, vorgelagerte Wiederherstellung der Basis-Infrastruktur mit Zielwert, Betriebsdauer nach Angebots- und Nachfrageseite gegliedert, Workarounds und daraus abgeleitetes Aufnahmekriterium ergänzt |
 | 2.1 | 05.09.2026 | CRO | Umgang mit Zielkonflikten zur Ausschlussentscheidung ergänzt, Krisenstab-Mindestbesetzung auf fünf Rollen angehoben |
 | 2.0 | 02.09.2026 | CRO | Normative Einordnung (MBCO), Viabilitätsdimensionen, expliziter Ausschlussumfang, Schichtung der Systeme, Wiederanlaufsequenz, Betriebsdauer und Eskalationspunkte, Notfalldokumentation, Clean-Room-Prinzip, Quellenverzeichnis |
