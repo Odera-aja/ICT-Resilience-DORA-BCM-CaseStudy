@@ -38,6 +38,40 @@ Nachweis erbringt. Die übrigen Angaben sind unterstützende Bezüge.
 
 ---
 
+## Abdeckung von ISO/IEC 22301 nach Kapiteln
+
+Diese Übersicht zeigt, welche Kapitel der Norm dieses Projekt abdeckt und
+welche bewusst offen sind. Der Schwerpunkt liegt auf Kapitel 8, weil dort die
+eigentliche Methodik liegt.
+
+| Kapitel | Inhalt | Abgedeckt durch | Stand |
+|---|---|---|---|
+| **4.1 / 4.2** | Kontext, interne und externe Themen, interessierte Parteien | `00_Governance/00_Organisationsprofil.md`, insbesondere die Stakeholder-Übersicht | ✅ |
+| **4.3** | Geltungsbereich des BCMS | `00_Governance/01_Geltungsbereich.md`, Abschnitt 5 | ✅ |
+| **5.1** | Verpflichtung der obersten Leitung | nur implizit über die Freigaben durch CRO und CISO | 🔶 teilweise |
+| **5.2** | Business-Continuity-Politik | `20_Business_Continuity/00_ICT_Business_Continuity_Policy.md` | ✅ |
+| **5.3** | Rollen, Verantwortlichkeiten und Befugnisse | Policy Abschnitt 2 (BCM-Department, Crisis Manager, Krisenstab) und Abschnitt 2.1 (Entscheidungsbefugnis im Konfliktfall) | ✅ |
+| **6.1** | Umgang mit Risiken und Chancen | `10_Risikomanagement/00_BC_Risikobeurteilung.md` | 🔜 geplant |
+| **6.2** | Ziele des BCMS und ihre Messung | nicht behandelt | ❌ offen |
+| **6.3** | Planung von Änderungen | nicht behandelt | ❌ offen |
+| **7.1** | Ressourcen | nur die Mindestbesetzung im Krisenfall (`02_Minimum_Viable_Company.md`, Abschnitt 3.3) | 🔶 teilweise |
+| **7.2 / 7.3** | Kompetenz und Bewusstsein | nicht behandelt | ❌ offen |
+| **7.4** | Kommunikation | Krisenkommunikation geplant, die laufende BCMS-Kommunikation fehlt | 🔶 teilweise |
+| **7.5** | Gelenkte Dokumentation | implizit über Versions- und Freigabetabellen, nicht als Verfahren beschrieben | 🔶 teilweise |
+| **8.2** | Business Impact Analysis und Risikobeurteilung | `20_Business_Continuity/01_Business_Impact_Analysis.md` | ✅ |
+| **8.2.2 / 8.3** | MBCO und Strategien | `02_Minimum_Viable_Company.md`, `03_Wiederanlaufstrategien.md` | ✅ / 🔜 |
+| **8.4** | Pläne und Verfahren | `04_Wiederanlaufplaene.md`, `06_Krisenkommunikation.md` | 🔜 geplant |
+| **8.5** | Übungsprogramm | `07_Testing_und_Uebungszyklus.md` | 🔜 geplant |
+| **9 / 10** | Bewertung der Leistung und Verbesserung | `08_Review_und_Verbesserung.md` | 🔜 geplant |
+
+**Zur größten offenen Stelle, Kapitel 7:** Kompetenz und Bewusstsein sind in
+der Praxis der häufigste Befundpunkt in BCMS-Audits. Ein
+Business-Continuity-Managementsystem scheitert selten an fehlenden Plänen,
+sondern daran, dass die Beteiligten sie nicht kennen. Diese Lücke ist hier
+bewusst benannt und nicht kaschiert.
+
+---
+
 ## Nicht bearbeitete Bereiche
 
 | Bereich | Begründung |
@@ -63,4 +97,5 @@ Prüfung durch eine akkreditierte Stelle.
 | Version | Datum | Autorisiert durch | Änderung |
 |---|---|---|---|
 | 1.0 | 01.09.2026 | CISO | Initiale Fassung |
+| 1.2 | 17.09.2026 | CISO | Abdeckungsübersicht nach ISO/IEC 22301 Kapiteln 4 bis 10 ergänzt, einschließlich der offenen Stellen |
 | 1.1 | 02.09.2026 | CISO | Zusammengeführter Geltungsbereich, DORA Art. 12 und ISO/IEC 22301 Kap. 8.4, 9 und 10 aufgenommen, Statement of Applicability als bewusste Auslassung ergänzt |
